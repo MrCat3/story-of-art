@@ -1,0 +1,83 @@
+{
+  "willendorf": {
+    "file": "willendorf.jpg",
+    "commonsTitle": "File:Venus von Willendorf 01.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Venus_von_Willendorf_01.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "未注明",
+    "credit": "Wikimedia Commons"
+  },
+  "sistine-madonna": {
+    "file": "sistine-madonna.jpg",
+    "commonsTitle": "File:Raphael - The Sistine Madonna - Google Arts & Culture.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Raphael_-_The_Sistine_Madonna_-_Google_Arts_%26_Culture.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "拉斐尔",
+    "credit": "Wikimedia Commons / Google Arts & Culture 文件"
+  },
+  "altamira": {
+    "file": "altamira.jpg",
+    "commonsTitle": "File:Reproduction cave of Altamira 01.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Reproduction_cave_of_Altamira_01.jpg",
+    "license": "CC BY-SA",
+    "licenseUrl": "",
+    "artist": "未注明",
+    "credit": "阿尔塔米拉复制品摄影"
+  },
+  "cave-hands": {
+    "file": "cave-hands.jpg",
+    "commonsTitle": "File:SantaCruz-CuevaManos-P2210651b.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:SantaCruz-CuevaManos-P2210651b.jpg",
+    "license": "CC BY-SA",
+    "licenseUrl": "",
+    "artist": "未注明",
+    "credit": "Wikimedia Commons"
+  },
+  "narmer": {
+    "file": "narmer.jpg",
+    "commonsTitle": "File:Narmer Palette (verso).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Narmer_Palette_(verso).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "未注明",
+    "credit": "Wikimedia Commons"
+  },
+  "khafre": {
+    "file": "khafre.jpg",
+    "commonsTitle": "File:Khafre Enthroned, side view.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Khafre_Enthroned,_side_view.JPG",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "A. Parrot",
+    "credit": "Own work"
+  },
+  "standard-ur": {
+    "file": "standard-ur.jpg",
+    "commonsTitle": "File:Standard of Ur - War.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Standard_of_Ur_-_War.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Unknown author Unknown author",
+    "credit": "\"Royal Standard of Ur\" - Mosaic With Sumer Images , Awesome Stories."
+  },
+  "kouros": {
+    "file": "kouros.jpg",
+    "commonsTitle": "File:Kouros dalla tomba di kroisos, da anavyssos in attica, 530 ac ca. 01, n. 3851.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Kouros_dalla_tomba_di_kroisos,_da_anavyssos_in_attica,_530_ac_ca._01,_n._3851.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Francesco Bini",
+    "credit": "Own work"
+  },
+  "kritios": {
+    "file": "kritios.jpg",
+    "commonsTitle": "File:009MA Kritios.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:009MA_Kritios.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "User:Tetraktys",
+    "credit": "Own work"
+  }
+}
