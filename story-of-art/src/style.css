@@ -148,7 +148,10 @@ h1 {
   margin: 1.6rem 0 0.45rem;
 }
 
-.essay p { margin: 0 0 1rem; }
+.essay p {
+  margin: 0 0 1.15rem;
+  text-indent: 2em;
+}
 
 .plate {
   position: sticky;
