@@ -187,6 +187,22 @@ h1 {
 .afterword p { text-indent: 2em; margin: 0 0 0.9rem; }
 .afterword-note { text-indent: 0; }
 
+.more-looking {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+
+.more-looking li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.more-looking span { font-weight: 600; }
+
 strong.key {
   font-weight: 600;
   background: linear-gradient(#f0d2cb, #f0d2cb) left 0.72em / 100% 0.42em no-repeat;

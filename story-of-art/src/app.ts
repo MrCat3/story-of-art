@@ -190,6 +190,25 @@ function renderChapter(id: string) {
     .filter(Boolean)
     .join("");
 
+  const moreLooking = chapter.workIds
+    .map((workId) => {
+      const work = getWork(workId);
+      const credit = getImageCredit(workId);
+      const q = encodeURIComponent(`${work.title} ${work.artist}`);
+      const arts = `https://artsandculture.google.com/search?q=${q}`;
+      const wiki = `https://www.wikiart.org/en/search/${q}`;
+      const commons = credit?.commonsPage
+        ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
+        : "";
+      return `<li>
+        <span>${escapeHtml(work.title)}</span>
+        <a href="${arts}" target="_blank" rel="noopener">Google Arts</a>
+        <a href="${wiki}" target="_blank" rel="noopener">WikiArt</a>
+        ${commons}
+      </li>`;
+    })
+    .join("");
+
   return `<article class="sheet sheet-chapter">
     <p class="crumb"><a href="#home">全书</a> / <a href="#part/${chapter.part}">${part?.title ?? ""}</a></p>
     <header class="sheet-head">
@@ -199,8 +218,10 @@ function renderChapter(id: string) {
     <div class="essay">${body.join("")}</div>
     <section class="afterword">
       <h2>衍生</h2>
-      <p class="afterword-note">下面不是原书的叙述，是拿这一章来改你自己的看法。</p>
+      <p class="afterword-note">下面不是原书的叙述，是拿这一章来改你自己的看法，再到原作的高清图里核对。</p>
       ${aside}
+      <h2>继续看图</h2>
+      <ul class="more-looking">${moreLooking}</ul>
     </section>
     ${chapterNav(id)}
   </article>`;
