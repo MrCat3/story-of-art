@@ -50,34 +50,11 @@ function topbar(route: Route) {
   </header>`;
 }
 
-function partSwitch() {
-  return `<nav class="part-switch" aria-label="切换段落">
-    ${parts
-      .map(
-        (p) =>
-          `<a href="#part/${p.id}" title="${p.subtitle}">${p.id}</a>`,
-      )
-      .join("")}
-  </nav>`;
-}
-
-/** 只显示当前段的章节，避免 28 章侧栏堆在一起 */
-function partChapterNav(partId: number, activeId?: string) {
-  const part = parts.find((p) => p.id === partId);
-  if (!part) return "";
-  const items = part.chapters
-    .map((id) => {
-      const ch = getChapter(id);
-      const active = id === activeId ? " is-active" : "";
-      const short = id === "intro" ? "导论" : ch.title;
-      return `<li><a class="local-link${active}" href="#read/${id}">${short}</a></li>`;
-    })
-    .join("");
-  return `<nav class="local-nav">
-    <p class="local-nav-heading"><a href="#part/${partId}">${part.title}</a></p>
-    <ul>${items}</ul>
-    ${partSwitch()}
-  </nav>`;
+function oneLine(id: string) {
+  const chapter = getChapter(id);
+  if (chapter.teaser) return chapter.teaser;
+  const sentence = chapter.paragraphs[0] ?? "";
+  return sentence.length > 36 ? `${sentence.slice(0, 36)}…` : sentence;
 }
 
 function workCard(id: string) {
@@ -133,43 +110,28 @@ function chapterNav(currentId: string) {
 }
 
 function renderHome() {
-  const partCards = parts
-    .map(
-      (part) => `
-      <a class="part-door" href="#part/${part.id}">
-        <span class="part-door-num">${part.id}</span>
-        <span class="part-door-body">
-          <strong>${part.title}</strong>
-          <span>${part.subtitle}</span>
-          <span class="part-door-meta">${part.chapters.length} 章</span>
-        </span>
-      </a>`,
-    )
+  const thread = parts
+    .map((part, index) => {
+      const start =
+        index === 0
+          ? `<a class="thread-start" href="#read/intro">从导论开始</a>`
+          : "";
+      return `<li>
+        <a class="thread-link" href="#part/${part.id}">
+          <span class="thread-name">${part.title}</span>
+          <span class="thread-range">${part.subtitle}</span>
+        </a>
+        ${start}
+      </li>`;
+    })
     .join("");
 
   return `<div class="page-home">
-    <section class="hero-panel">
-      <p class="accession">GOMBRICH · STORY OF ART</p>
-      <h1>按章读《艺术的故事》</h1>
-      <p class="hero-lead">每章分开写：贡布里希在这一章里做什么、时代风格是什么、三件作品怎么读。文字是浓缩导读，不是原书摘抄。</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#read/intro">从导论开始</a>
-      </div>
-      <p class="hero-hint">全书拆成四段。点下面卡片进入<strong>该段章节列表</strong>（只看这一段，不是二十八章一页摊开）。</p>
-    </section>
-    <section class="part-doors" aria-label="全书四段">
-      <h2 class="section-title">选一段开始</h2>
-      <div class="part-door-grid">${partCards}</div>
-    </section>
-    <details class="fold-help">
-      <summary>阅读建议</summary>
-      <ul>
-        <li>先选一段，再进单章；不必在首页展开全部二十八章。</li>
-        <li>章内先看作品图与「看哪里」，再读文字。</li>
-        <li>导论与前几章内容最厚，其余章将逐步补全同样结构。</li>
-      </ul>
-    </details>
-    <p class="fine-print">${site.disclaimer}</p>
+    <p class="book-kicker">贡布里希 · 范景中译</p>
+    <h1>艺术的故事</h1>
+    <p class="deck">按书的顺序读。先选一段，再进一章。每一章写作者在纠正什么、这个时代的图像习惯，以及三件作品怎么看。</p>
+    <ol class="thread">${thread}</ol>
+    <p class="colophon">${site.disclaimer}</p>
   </div>`;
 }
 
@@ -181,63 +143,60 @@ function renderPart(partId: number) {
     .map((id) => {
       const ch = getChapter(id);
       return `<li>
-        <a class="catalog-row" href="#read/${id}">
-          <span class="catalog-title">${chapterListLabel(id, ch)}</span>
-          <span class="catalog-when">${ch.when}</span>
+        <a class="toc-row" href="#read/${id}">
+          <span class="toc-name">${chapterListLabel(id, ch)}</span>
+          <span class="toc-line">${oneLine(id)}</span>
         </a>
       </li>`;
     })
     .join("");
 
-  return `<div class="layout-single">
-    <div class="main">
-      <p class="breadcrumb"><a href="#home">入门</a> / 第 ${partId} 段</p>
-      <header class="chapter-head">
-        <h1>${part.title}</h1>
-        <p class="chapter-when">${part.subtitle}</p>
-        <p class="part-blurb">${part.blurb}</p>
-      </header>
-      ${partSwitch()}
-      <ol class="part-catalog">${rows}</ol>
-      <p class="part-back"><a href="#home">返回四段总览</a></p>
-    </div>
-  </div>`;
+  return `<article class="sheet">
+    <p class="crumb"><a href="#home">全书</a></p>
+    <header class="sheet-head">
+      <p class="book-kicker">第 ${partId} 段 · ${part.subtitle}</p>
+      <h1>${part.title}</h1>
+      <p class="deck">${part.blurb}</p>
+    </header>
+    <ol class="toc">${rows}</ol>
+  </article>`;
 }
 
 function renderChapter(id: string) {
   const chapter = getChapter(id);
-  const works = chapter.workIds.map(workCard).join("");
+  const [first, ...rest] = chapter.workIds;
+  const plate = first ? workCard(first) : "";
+  const more = rest.map(workCard).join("");
+  const part = parts.find((item) => item.id === chapter.part);
 
-  return `<div class="layout-read">
-    ${partChapterNav(chapter.part, id)}
-    <div class="main">
-      <p class="breadcrumb"><a href="#home">入门</a> / <a href="#part/${chapter.part}">第 ${chapter.part} 段</a></p>
-      <header class="chapter-head">
-        <p class="accession">${chapterAccession(id)}</p>
-        <h1>${chapter.title}</h1>
-        <p class="chapter-when">${chapter.when}</p>
-      </header>
-      ${noteSection("贡布里希在这一章", chapter.authorNote)}
-      ${noteSection("风格与时代问题", chapter.styleNote)}
-      <section class="block block-prose">
-        <h2>本章叙述</h2>
-        ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
-      </section>
-      <section class="block block-works">
-        <h2>作品</h2>
-        <div class="work-stack">${works}</div>
-      </section>
-      <section class="block block-hinge">
-        <h2>承上启下</h2>
-        <p>${chapter.hinge}</p>
-      </section>
-      <section class="block block-exercise">
-        <h2>练习</h2>
-        <p>${chapter.exercise}</p>
-      </section>
-      ${chapterNav(id)}
+  return `<article class="sheet sheet-chapter">
+    <p class="crumb"><a href="#home">全书</a> / <a href="#part/${chapter.part}">${part?.title ?? ""}</a></p>
+    <header class="sheet-head">
+      <p class="book-kicker">${chapterAccession(id)} · ${chapter.when}</p>
+      <h1>${chapter.title}</h1>
+    </header>
+    <div class="spread">
+      <div class="essay">
+        ${noteSection("贡布里希在这一章", chapter.authorNote)}
+        ${noteSection("这个时代的图像", chapter.styleNote)}
+        <section class="block">
+          <h2>顺着读</h2>
+          ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
+        </section>
+        <section class="block">
+          <h2>接到下一章</h2>
+          <p>${chapter.hinge}</p>
+        </section>
+        <section class="block">
+          <h2>停下来看</h2>
+          <p>${chapter.exercise}</p>
+        </section>
+        ${chapterNav(id)}
+      </div>
+      <aside class="plate">${plate}</aside>
     </div>
-  </div>`;
+    ${more ? `<section class="more-works">${more}</section>` : ""}
+  </article>`;
 }
 
 function chapterForWork(workId: string) {
@@ -262,16 +221,14 @@ function renderDerive() {
     .map((g) => `<dt>${g.term}</dt><dd>${g.def}</dd>`)
     .join("");
 
-  return `<div class="layout-single">
-    <div class="main derive">
-      <h1>衍生学习</h1>
+  return `<article class="sheet">
+      <h1>衍生</h1>
       <p class="derive-lead">对照、词汇、书的边界与继续看图的去处。</p>
       <section class="block"><h2>对照看图</h2><div class="pair-grid">${pairs}</div></section>
       <section class="block"><h2>小词典</h2><dl class="glossary">${terms}</dl></section>
       <section class="block"><h2>书的边界</h2><ul>${boundaries.map((b) => `<li>${b}</li>`).join("")}</ul></section>
       <section class="block"><h2>继续看图</h2><ul class="museum-list">${museums.map((m) => `<li><a href="${m.url}" target="_blank" rel="noopener">${m.name}</a></li>`).join("")}</ul></section>
-    </div>
-  </div>`;
+  </article>`;
 }
 
 export function render() {
