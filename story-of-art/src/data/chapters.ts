@@ -19,6 +19,8 @@ export const chapters: Chapter[] = [
     hinge: "后面二十八章，都是「处境变了，图式跟着改」的具体章节；第一章就从最远的起源讲起。",
     exercise: "找任意一张广告或海报，写下它要让人做的三件事：看哪里、相信什么、去做什么。再写：它沿用了哪一种你熟悉的图像习惯（肖像、风景、符号）？",
     workIds: ["willendorf", "sistine-madonna"],
+    inserts: [{ at: 3, workIds: ["willendorf", "sistine-madonna"] }],
+    marks: ["不能拿「像不像」这一把尺子量完", "欣赏不等于喜欢", "没有哪一种天生更正宗"],
   },
   {
     id: "c01",
@@ -39,6 +41,11 @@ export const chapters: Chapter[] = [
     hinge: "一旦社会要图像在墓地里「永远有效」，形式会变得更固定、更可重复——埃及一章将把这种逻辑推到极致。",
     exercise: "对比阿尔塔米拉野牛与威伦道夫维纳斯：列出三件作品各自的尺度、材料、是否便于携带、画面或形体强调什么。再猜：它们更可能出现在仪式中，还是市场陈列中？",
     workIds: ["altamira", "cave-hands", "willendorf"],
+    inserts: [
+      { at: 1, workIds: ["altamira", "cave-hands"] },
+      { at: 2, workIds: ["willendorf"] },
+    ],
+    marks: ["用途比后来的审美词更先", "没有透视，没有签名，不等于没有规矩"],
   },
   {
     id: "c02",
@@ -59,6 +66,11 @@ export const chapters: Chapter[] = [
     hinge: "希腊人接下来会问：能不能在保持清楚的同时，让身体像真的站在地上？",
     exercise: "看纳尔迈调色板：圈出国王、敌人和动物符号。用一句话写：谁最大，哪一部分身体被故意摊开，若改成完全侧面会失去什么。",
     workIds: ["narmer", "khafre", "standard-ur"],
+    inserts: [
+      { at: 2, workIds: ["narmer", "khafre"] },
+      { at: 3, workIds: ["standard-ur"] },
+    ],
+    marks: ["清楚不是简陋", "这不是一次画错"],
   },
   {
     id: "c03",
@@ -79,6 +91,12 @@ export const chapters: Chapter[] = [
     hinge: "身体站住了。下一步，美本身会变成可以追求的题目，而不只是神庙或葬礼的附属。",
     exercise: "对比库罗斯和克里提奥斯少年：各用一句话描写两条腿。再写肩和髋是否还在一条水平线上。",
     workIds: ["kouros", "kritios", "parthenon"],
+    inserts: [
+      { at: 1, workIds: ["kouros"] },
+      { at: 2, workIds: ["kritios"] },
+      { at: 3, workIds: ["parthenon"] },
+    ],
+    marks: ["大理石像一个活人刚刚站稳", "大理石第一次像会累"],
   },
   {
     id: "c04",
@@ -253,6 +271,12 @@ export const chapters: Chapter[] = [
     hinge: "威尼斯用色与光走出另一条路，不把佛罗伦萨的素描当成唯一的和谐。",
     exercise: "在《雅典学院》里找出中间举手和前指的两个人。各写一句：他们的手在指向哪里，周围哪一组人因此被分开。",
     workIds: ["mona", "michelangelo-david", "school-athens"],
+    inserts: [
+      { at: 1, workIds: ["mona"] },
+      { at: 2, workIds: ["michelangelo-david"] },
+      { at: 3, workIds: ["school-athens"] },
+    ],
+    marks: ["这些技术怎样不显得是技术", "不肯把三个人收成三种商标"],
   },
   {
     id: "c16",

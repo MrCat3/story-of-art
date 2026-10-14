@@ -50,6 +50,8 @@ a:focus-visible { outline: 2px solid var(--ribbon); outline-offset: 3px; }
   padding: 3.5rem 1.5rem 5rem;
 }
 
+.sheet-chapter { max-width: 42rem; }
+
 .book-kicker,
 .crumb {
   font-family: var(--text);
@@ -152,6 +154,50 @@ h1 {
   margin: 0 0 1.15rem;
   text-indent: 2em;
 }
+
+.essay .point,
+.essay .do {
+  text-indent: 0;
+}
+
+.point {
+  margin-top: 1.6rem;
+  padding: 0.15em 0 0.15em 0.85em;
+  border-left: 3px solid var(--ribbon);
+}
+
+.do {
+  color: var(--quiet);
+}
+
+strong.key {
+  font-weight: 600;
+  background: linear-gradient(#f0d2cb, #f0d2cb) left 0.72em / 100% 0.42em no-repeat;
+}
+
+.inline-work {
+  margin: 0.4rem 0 1.6rem;
+}
+
+.inline-work img {
+  display: block;
+  width: 100%;
+  max-height: 32rem;
+  object-fit: contain;
+  background: #f3efe8;
+}
+
+.inline-work figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.55rem;
+  font-size: 1rem;
+}
+
+.work-title { font-weight: 600; }
+.work-meta { color: var(--quiet); }
+.work-look { margin-top: 0.25rem; }
 
 .plate {
   position: static;

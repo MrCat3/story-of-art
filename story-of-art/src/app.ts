@@ -57,46 +57,39 @@ function oneLine(id: string) {
   return sentence.length > 36 ? `${sentence.slice(0, 36)}…` : sentence;
 }
 
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function withMarks(text: string, marks: string[] = []) {
+  let html = escapeHtml(text);
+  for (const mark of marks) {
+    if (!mark) continue;
+    const safe = escapeHtml(mark);
+    html = html.split(safe).join(`<strong class="key">${safe}</strong>`);
+  }
+  return html;
+}
+
 function workCard(id: string) {
   const work = getWork(id);
   const src = imageSrc(id);
   const credit = getImageCredit(id);
   const img = src
-    ? `<figure class="work-figure">
-        <img src="${src}" alt="${work.title}" loading="lazy" />
-        <figcaption>
-          <span>${credit?.license ?? ""}</span>
-          ${credit?.commonsPage ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>` : ""}
-        </figcaption>
-      </figure>`
-    : `<div class="work-missing">本地暂无图。可在 Google Arts & Culture 或博物馆开放收藏搜索「${work.title}」。</div>`;
-
-  const extra = [
-    work.context && `<p><span class="work-label">背景</span>${work.context}</p>`,
-    work.inBook && `<p><span class="work-label">书中位置</span>${work.inBook}</p>`,
-    work.style && `<p><span class="work-label">形式与风格</span>${work.style}</p>`,
-    `<p><span class="work-label">看哪里</span>${work.look}</p>`,
-  ]
-    .filter(Boolean)
-    .join("");
-
-  return `<article class="work-card" id="work-${id}">
+    ? `<img src="${src}" alt="${work.title}" loading="lazy" />`
+    : `<div class="work-missing">本地暂无图。可到博物馆开放收藏搜索「${work.title}」。</div>`;
+  const source = credit?.commonsPage
+    ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
+    : "";
+  return `<figure class="inline-work" id="work-${id}">
     ${img}
-    <div class="work-body">
-      <h3>${work.title}</h3>
-      <p class="work-meta">${work.artist} · ${work.year}</p>
-      <p class="work-place">${work.place}</p>
-      <div class="work-notes">${extra}</div>
-    </div>
-  </article>`;
-}
-
-function noteSection(title: string, items?: string[]) {
-  if (!items?.length) return "";
-  return `<section class="block block-note">
-    <h2>${title}</h2>
-    ${items.map((p) => `<p>${p}</p>`).join("")}
-  </section>`;
+    <figcaption>
+      <span class="work-title">${work.title}</span>
+      <span class="work-meta">${work.artist} · ${work.year}</span>
+      <span class="work-look">${escapeHtml(work.look)}</span>
+      ${source}
+    </figcaption>
+  </figure>`;
 }
 
 function chapterNav(currentId: string) {
@@ -164,10 +157,34 @@ function renderPart(partId: number) {
 
 function renderChapter(id: string) {
   const chapter = getChapter(id);
-  const [first, ...rest] = chapter.workIds;
-  const plate = first ? workCard(first) : "";
-  const more = rest.map(workCard).join("");
   const part = parts.find((item) => item.id === chapter.part);
+  const marks = chapter.marks ?? [];
+  const inserts = new Map<number, string[]>();
+  for (const insert of chapter.inserts ?? []) {
+    inserts.set(insert.at, insert.workIds);
+  }
+  const used = new Set<string>();
+  const body: string[] = [];
+  if (chapter.prior) body.push(`<p>${withMarks(chapter.prior, marks)}</p>`);
+  chapter.paragraphs.forEach((paragraph, index) => {
+    body.push(`<p>${withMarks(paragraph, marks)}</p>`);
+    for (const workId of inserts.get(index) ?? []) {
+      used.add(workId);
+      body.push(workCard(workId));
+    }
+  });
+  if (!chapter.inserts?.length) {
+    for (const workId of chapter.workIds) body.push(workCard(workId));
+  } else {
+    for (const workId of chapter.workIds) {
+      if (!used.has(workId)) body.push(workCard(workId));
+    }
+  }
+  if (chapter.revision) {
+    body.push(`<p class="point">${withMarks(chapter.revision, marks)}</p>`);
+  }
+  body.push(`<p>${withMarks(chapter.hinge, marks)}</p>`);
+  body.push(`<p class="do">${withMarks(chapter.exercise, marks)}</p>`);
 
   return `<article class="sheet sheet-chapter">
     <p class="crumb"><a href="#home">全书</a> / <a href="#part/${chapter.part}">${part?.title ?? ""}</a></p>
@@ -175,31 +192,7 @@ function renderChapter(id: string) {
       <p class="book-kicker">${chapterAccession(id)} · ${chapter.when}</p>
       <h1>${chapter.title}</h1>
     </header>
-    <div class="spread">
-      <div class="essay">
-        ${noteSection("你可能已经这么想", chapter.prior ? [chapter.prior] : undefined)}
-        ${noteSection("看图时哪里对不上", chapter.conflict ? [chapter.conflict] : undefined)}
-        ${noteSection("看法可以改成", chapter.revision ? [chapter.revision] : undefined)}
-        ${chapter.prior ? "" : noteSection("贡布里希在这一章", chapter.authorNote)}
-        ${chapter.prior ? "" : noteSection("这个时代的图像", chapter.styleNote)}
-        <section class="block">
-          <h2>${chapter.prior ? "用改过的看法再读" : "顺着读"}</h2>
-          ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
-          ${(chapter.prior ? chapter.authorNote ?? [] : []).map((p) => `<p>${p}</p>`).join("")}
-          ${(chapter.prior ? chapter.styleNote ?? [] : []).map((p) => `<p>${p}</p>`).join("")}
-        </section>
-        <section class="block">
-          <h2>带到下一章</h2>
-          <p>${chapter.hinge}</p>
-        </section>
-        <section class="block">
-          <h2>你来做一次</h2>
-          <p>${chapter.exercise}</p>
-        </section>
-      </div>
-      <aside class="plate">${plate}</aside>
-    </div>
-    ${more ? `<section class="more-works">${more}</section>` : ""}
+    <div class="essay">${body.join("")}</div>
     ${chapterNav(id)}
   </article>`;
 }

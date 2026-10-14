@@ -25,6 +25,10 @@ export type Chapter = {
   hinge: string;
   exercise: string;
   workIds: string[];
+  /** 段落序号之后插入作品，序号从 0 起 */
+  inserts?: { at: number; workIds: string[] }[];
+  /** 在正文里描出来的短句，便于扫读 */
+  marks?: string[];
 };
 
 export type ImageCredit = {
