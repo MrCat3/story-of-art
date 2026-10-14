@@ -81,12 +81,15 @@ function workCard(id: string) {
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
     : "";
+  const prose = [work.context, work.style, work.inBook, work.look].filter(
+    (part): part is string => Boolean(part),
+  );
   return `<figure class="inline-work" id="work-${id}">
     ${img}
     <figcaption>
       <span class="work-title">${work.title}</span>
-      <span class="work-meta">${work.artist} · ${work.year}</span>
-      <span class="work-look">${escapeHtml(work.look)}</span>
+      <span class="work-meta">${work.artist} · ${work.year} · ${work.place}</span>
+      ${prose.map((part) => `<p>${escapeHtml(part)}</p>`).join("")}
       ${source}
     </figcaption>
   </figure>`;
