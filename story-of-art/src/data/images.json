@@ -79,5 +79,646 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "artist": "User:Tetraktys",
     "credit": "Own work"
+  },
+  "parthenon": {
+    "file": "parthenon.jpg",
+    "commonsTitle": "File:Two horsemen South Frieze Parthenon.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Two_horsemen_South_Frieze_Parthenon.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Sanjay ach",
+    "credit": "Own work"
+  },
+  "venus-milo": {
+    "file": "venus-milo.jpg",
+    "commonsTitle": "File:Venus de Milo.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo.JPG",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "artist": "Unknown author Unknown author",
+    "credit": "Chosovi"
+  },
+  "laocoon": {
+    "file": "laocoon.jpg",
+    "commonsTitle": "File:Laocoon and His Sons.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Laocoon_and_His_Sons.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Hagesandros, Athenedoros, and Polydoros",
+    "credit": "LivioAndronico (2014)"
+  },
+  "pergamon": {
+    "file": "pergamon.jpg",
+    "commonsTitle": "File:Gigantomachy frieze of the Pergamon Altar Athena-0001.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gigantomachy_frieze_of_the_Pergamon_Altar_Athena-0001.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "MatthiasKabel",
+    "credit": "Own work"
+  },
+  "augustus": {
+    "file": "augustus.jpg",
+    "commonsTitle": "File:Statue-Augustus.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Statue-Augustus.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Till Niermann",
+    "credit": "Own work"
+  },
+  "trajan": {
+    "file": "trajan.jpg",
+    "commonsTitle": "File:Dacian ambassadors ask Traianus for mercy (Detail from Trajan's Column in Rome).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Dacian_ambassadors_ask_Traianus_for_mercy_(Detail_from_Trajan%27s_Column_in_Rome).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Unknown author Unknown author",
+    "credit": "Fröhlich Róbert, Kuzsinszky Bálint, Nagy Géza, Marczali Henrik: A magyar nemzet története (edited by S. Szilágyi), Volume 1. Athenaeum Irodalmi és Nyomdai Rt., Budapest, 1898. Online: https://archive.org/details/magyarnemzettrtn0000sndo/page/n9/mode/2up"
+  },
+  "gandhara": {
+    "file": "gandhara.jpg",
+    "commonsTitle": "File:Labit - Sitting Buddha meditating - Swat Valley, Gandhara, Pakistan D. 70.1.2.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Labit_-_Sitting_Buddha_meditating_-_Swat_Valley,_Gandhara,_Pakistan_D._70.1.2.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Didier Descouens",
+    "credit": "Own work"
+  },
+  "justinian": {
+    "file": "justinian.jpg",
+    "commonsTitle": "File:Justinian mosaic, San Vitale, consecrated 547, Ravenna, Italy.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Justinian_mosaic,_San_Vitale,_consecrated_547,_Ravenna,_Italy.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Steven Zucker",
+    "credit": "https://smarthistory.org/san-vitale/"
+  },
+  "hagia": {
+    "file": "hagia.jpg",
+    "commonsTitle": "File:Gaspare Fossati - Louis Haghe - Vue générale de la grande nef, en regardant l'occident (Hagia Sophia - Ayasofya Mosque nave).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gaspare_Fossati_-_Louis_Haghe_-_Vue_g%C3%A9n%C3%A9rale_de_la_grande_nef,_en_regardant_l%27occident_(Hagia_Sophia_-_Ayasofya_Mosque_nave).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Gaspare Fossati (artist, 1809-1883) Louis Haghe (lithographer, 1806-1885) Adam Cuerden (restoration)",
+    "credit": "This image is available from the United States Library of Congress 's Prints and Photographs division under the digital ID cph.3g11883 . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing ."
+  },
+  "pantocrator": {
+    "file": "pantocrator.jpg",
+    "commonsTitle": "File:Christ Pantocrator Deesis mosaic Hagia Sophia.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Christ_Pantocrator_Deesis_mosaic_Hagia_Sophia.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Photograph: Myrabella",
+    "credit": "Own work"
+  },
+  "cordoba": {
+    "file": "cordoba.jpg",
+    "commonsTitle": "File:Mosque of Cordoba Spain.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Mosque_of_Cordoba_Spain.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "Steven J. Dunlop, Nerstrand, MN",
+    "credit": ""
+  },
+  "dome-rock": {
+    "file": "dome-rock.jpg",
+    "commonsTitle": "File:Jerusalem-2013-Temple Mount-Dome of the Rock & Chain 02.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jerusalem-2013-Temple_Mount-Dome_of_the_Rock_%26_Chain_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Godot13",
+    "credit": "Own work"
+  },
+  "fan-kuan": {
+    "file": "fan-kuan.jpg",
+    "commonsTitle": "File:Fan Kuan - Travelers Among Mountains and Streams - Signature.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Signature.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Fan Kuan",
+    "credit": "WAHwkSr8lMK0uA at Google Cultural Institute maximum zoom level"
+  },
+  "kells": {
+    "file": "kells.png",
+    "commonsTitle": "File:Book of Kells ChiRho Folio 34R.png",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Book_of_Kells_ChiRho_Folio_34R.png",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "unknown Irish or Scottish monks",
+    "credit": "Website of the Book of Kells on CD-ROM"
+  },
+  "sutton-hoo": {
+    "file": "sutton-hoo.jpg",
+    "commonsTitle": "File:Sutton Hoo helmet fig1 - reconstructed-known.svg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Sutton_Hoo_helmet_fig1_-_reconstructed-known.svg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Goran tek-en",
+    "credit": "Own work This file was derived from: Sutton Hoo helmet fig4.svg Information from: 1978 - The Sutton Hoo Ship-Burial, vol. 2 - Ch. 3 - The Helmet; design 1 p25] Requested by and knowledge from Usernameunique"
+  },
+  "charlemagne": {
+    "file": "charlemagne.jpg",
+    "commonsTitle": "File:Statuette équestre dite de Charlemagne - Musée du Louvre Objets d'Art OA 8260.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Statuette_%C3%A9questre_dite_de_Charlemagne_-_Mus%C3%A9e_du_Louvre_Objets_d%27Art_OA_8260.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Shonagon",
+    "credit": "Shonagon"
+  },
+  "autun": {
+    "file": "autun.jpg",
+    "commonsTitle": "File:Autun St Lazare Tympanon.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Autun_St_Lazare_Tympanon.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "未注明",
+    "credit": "Photograph taken by Lamettrie 15:44, 8 August 2005 (UTC) in August 2003."
+  },
+  "bayeux": {
+    "file": "bayeux.jpg",
+    "commonsTitle": "File:Bayeux Tapestry scene57 Harold death.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Bayeux_Tapestry_scene57_Harold_death.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Myrabella",
+    "credit": "Own work"
+  },
+  "vezelay": {
+    "file": "vezelay.png",
+    "commonsTitle": "File:03 Tympanum Vezelay Abbey.png",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:03_Tympanum_Vezelay_Abbey.png",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "artist": "NateBergin",
+    "credit": "Own work"
+  },
+  "chartres": {
+    "file": "chartres.jpg",
+    "commonsTitle": "File:Jamb Statues, Chartres Cathedral (19782175038).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jamb_Statues,_Chartres_Cathedral_(19782175038).jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Joe deSousa",
+    "credit": "Jamb Statues, Chartres Cathedral"
+  },
+  "giotto-lament": {
+    "file": "giotto-lament.jpg",
+    "commonsTitle": "File:Giotto - Scrovegni - -36- - Lamentation (The Mourning of Christ) adj.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ)_adj.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Giotto",
+    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"g/giotto/padova/3christ/scenes_4/chris20\""
+  },
+  "reims": {
+    "file": "reims.jpg",
+    "commonsTitle": "File:Reims Cathedrale Notre Dame 019 smiling angel.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Reims_Cathedrale_Notre_Dame_019_smiling_angel.JPG",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Mattana",
+    "credit": "Own work"
+  },
+  "lorenzetti": {
+    "file": "lorenzetti.jpg",
+    "commonsTitle": "File:Ambrogio Lorenzetti - Allegory of Good Government - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ambrogio_Lorenzetti_-_Allegory_of_Good_Government_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Ambrogio Lorenzetti",
+    "credit": "owH6OsVYalFGMw at Google Cultural Institute maximum zoom level"
+  },
+  "duccio": {
+    "file": "duccio.jpg",
+    "commonsTitle": "File:Maest 0 duccio 1308-11 siena duomo.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Maest_0_duccio_1308-11_siena_duomo.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Duccio di Buoninsegna",
+    "credit": "Web Gallery of Art"
+  },
+  "limbourg": {
+    "file": "limbourg.jpg",
+    "commonsTitle": "File:Les Très Riches Heures du duc de Berry Janvier.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Limbourg brothers",
+    "credit": "R-G Ojéda/RMN"
+  },
+  "masaccio": {
+    "file": "masaccio.jpg",
+    "commonsTitle": "File:Masaccio, Holy Trinity, 1425-28, Santa Maria Novella, Florence.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Masaccio,_Holy_Trinity,_1425-28,_Santa_Maria_Novella,_Florence.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Masaccio",
+    "credit": "Own work MenkinAlRire Taken on 13 September 2021"
+  },
+  "donatello": {
+    "file": "donatello.jpg",
+    "commonsTitle": "File:Donatello - David - Florença.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Donatello_-_David_-_Floren%C3%A7a.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "original file by Patrick A. Rodgers",
+    "credit": "File:Florence - David by Donatello.jpg"
+  },
+  "arnolfini": {
+    "file": "arnolfini.jpg",
+    "commonsTitle": "File:Van Eyck - Arnolfini Portrait.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Van_Eyck_-_Arnolfini_Portrait.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Jan van Eyck",
+    "credit": "Web site of National Gallery, London"
+  },
+  "botticelli": {
+    "file": "botticelli.jpg",
+    "commonsTitle": "File:The Birth of Venus (Botticelli) 1.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:The_Birth_of_Venus_(Botticelli)_1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Sandro Botticelli",
+    "credit": "Own work"
+  },
+  "piero": {
+    "file": "piero.jpg",
+    "commonsTitle": "File:Piero della Francesca 042.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Piero_della_Francesca_042.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Piero della Francesca",
+    "credit": "The Yorck Project (2002) 10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH. ISBN : 3936122202 ."
+  },
+  "mantegna": {
+    "file": "mantegna.jpg",
+    "commonsTitle": "File:Milan pinacothèque Lamentation of Christ par Mantegna.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Milan_pinacoth%C3%A8que_Lamentation_of_Christ_par_Mantegna.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Andrea Mantegna",
+    "credit": "Pierre André 2018-09-25 09:42:30"
+  },
+  "rogier": {
+    "file": "rogier.jpg",
+    "commonsTitle": "File:El Descendimiento, by Rogier van der Weyden, from Prado in Google Earth.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:El_Descendimiento,_by_Rogier_van_der_Weyden,_from_Prado_in_Google_Earth.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Rogier van der Weyden",
+    "credit": "The Prado in Google Earth: Home page 7 th level of zoom, JPEG compression quality: Photoshop 9."
+  },
+  "portinari": {
+    "file": "portinari.jpg",
+    "commonsTitle": "File:Hugo van der Goes Portinari 04.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hugo_van_der_Goes_Portinari_04.JPG",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Miguel Hermoso Cuesta",
+    "credit": "Own work"
+  },
+  "bosch": {
+    "file": "bosch.jpg",
+    "commonsTitle": "File:The Garden of Earthly Delights by Bosch High Resolution.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:The_Garden_of_Earthly_Delights_by_Bosch_High_Resolution.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Hieronymus Bosch",
+    "credit": "The Prado in Google Earth: Home page scaled down from 8 level of zoom, JPEG compression quality: Photoshop 10."
+  },
+  "mona": {
+    "file": "mona.jpg",
+    "commonsTitle": "File:Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Leonardo da Vinci",
+    "credit": "Cropped and relevelled from File:Mona Lisa, by Leonardo da Vinci, from C2RMF.jpg . Originally C2RMF: Galerie de tableaux en très haute définition : image page"
+  },
+  "michelangelo-david": {
+    "file": "michelangelo-david.jpg",
+    "commonsTitle": "File:Florence - David - tête.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Florence_-_David_-_t%C3%AAte.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "Eusebius",
+    "credit": "Own work"
+  },
+  "school-athens": {
+    "file": "school-athens.jpg",
+    "commonsTitle": "File:\"The School of Athens\" by Raffaello Sanzio da Urbino.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Raphael",
+    "credit": "Stitched together from vatican.va"
+  },
+  "tempest": {
+    "file": "tempest.jpg",
+    "commonsTitle": "File:Giorgione, The tempest.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Giorgione,_The_tempest.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Giorgione",
+    "credit": "http://www.gallerieaccademia.it/la-tempesta"
+  },
+  "titian": {
+    "file": "titian.jpg",
+    "commonsTitle": "File:Titian Bacchus and Ariadne.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Titian_Bacchus_and_Ariadne.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Titian",
+    "credit": "National Gallery, London - online catalogue ."
+  },
+  "bellini": null,
+  "durer": null,
+  "isenheim": {
+    "file": "isenheim.jpg",
+    "commonsTitle": "File:Isenheimer Altar (Colmar) jm01221 deriv.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Isenheimer_Altar_(Colmar)_jm01221_deriv.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "joergens.mi",
+    "credit": "Own work"
+  },
+  "bruegel": {
+    "file": "bruegel.jpg",
+    "commonsTitle": "File:Pieter Bruegel the Elder - Hunters in the Snow (Winter) - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_(Winter)_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Pieter Brueghel the Elder",
+    "credit": "WgFmzFNNN74nUg at Google Cultural Institute maximum zoom level"
+  },
+  "long-neck": {
+    "file": "long-neck.jpg",
+    "commonsTitle": "File:Parmigianino - Madonna and Child with Angels, known as the Madonna with the Long Neck.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Parmigianino_-_Madonna_and_Child_with_Angels,_known_as_the_Madonna_with_the_Long_Neck.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Parmigianino",
+    "credit": "https://www.uffizi.it/en/artworks/parmigianino-madonna-long-neck"
+  },
+  "pontormo": {
+    "file": "pontormo.jpg",
+    "commonsTitle": "File:Jacopo Pontormo - Deposition - WGA18113 (cropped).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Deposition_-_WGA18113_(cropped).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Pontormo",
+    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"p/pontormo/4capponi/1depos\""
+  },
+  "greco": {
+    "file": "greco.jpg",
+    "commonsTitle": "File:El Greco - The Burial of the Count of Orgaz.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:El_Greco_-_The_Burial_of_the_Count_of_Orgaz.JPG",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "El Greco",
+    "credit": "Unknown photographer Unknown photographer"
+  },
+  "matthew": {
+    "file": "matthew.jpg",
+    "commonsTitle": "File:Caravaggio, Michelangelo Merisi da - The Calling of Saint Matthew - 1599-1600 (hi res).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Caravaggio,_Michelangelo_Merisi_da_-_The_Calling_of_Saint_Matthew_-_1599-1600_(hi_res).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Caravaggio",
+    "credit": "SUNY College at Oneonta, NY"
+  },
+  "bernini": {
+    "file": "bernini.jpg",
+    "commonsTitle": "File:Ecstasy of Saint Teresa September 2015-2a.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ecstasy_of_Saint_Teresa_September_2015-2a.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Gian Lorenzo Bernini",
+    "credit": "Own work"
+  },
+  "rubens": {
+    "file": "rubens.jpg",
+    "commonsTitle": "File:Peter Paul Rubens - Raising of the Cross - WGA20437.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Raising_of_the_Cross_-_WGA20437.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Peter Paul Rubens",
+    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"r/rubens/7graphic/10sketc1\""
+  },
+  "night-watch": {
+    "file": "night-watch.jpg",
+    "commonsTitle": "File:The Nightwatch by Rembrandt - Rijksmuseum.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:The_Nightwatch_by_Rembrandt_-_Rijksmuseum.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Rembrandt",
+    "credit": "http://hdl.handle.net/10934/RM0001.COLLECT.5216"
+  },
+  "milkmaid": {
+    "file": "milkmaid.jpg",
+    "commonsTitle": "File:Johannes Vermeer - Het melkmeisje - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Johannes Vermeer",
+    "credit": "Google Arts & Culture — AHrw. Z3. Av6. Zhjg 9. AHrw. Z3. Av6. Zhjg"
+  },
+  "ruisdael": {
+    "file": "ruisdael.png",
+    "commonsTitle": "File:Amsterdam - Rijksmuseum 1885 - The Gallery of Honour (1st Floor) - The Windmill at Wijk bij Duurstede c. 1670 by Jacob van Ruisdael.png",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Amsterdam_-_Rijksmuseum_1885_-_The_Gallery_of_Honour_(1st_Floor)_-_The_Windmill_at_Wijk_bij_Duurstede_c._1670_by_Jacob_van_Ruisdael.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Txllxt TxllxT",
+    "credit": "Own work"
+  },
+  "san-carlo": {
+    "file": "san-carlo.jpg",
+    "commonsTitle": "File:San Carlo alle Quattro Fontane (Rome) - Dome HDR.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:San_Carlo_alle_Quattro_Fontane_(Rome)_-_Dome_HDR.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Francesco Borromini",
+    "credit": "Photo: LivioAndronico"
+  },
+  "tiepolo": {
+    "file": "tiepolo.jpg",
+    "commonsTitle": "File:Santa Maria del Rosario (Venice) Nave ceiling by Tiepolo - The Glory of St Dominic.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_del_Rosario_(Venice)_Nave_ceiling_by_Tiepolo_-_The_Glory_of_St_Dominic.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Didier Descouens",
+    "credit": "Own work"
+  },
+  "canaletto": {
+    "file": "canaletto.jpg",
+    "commonsTitle": "File:Canaletto - The Stonemason's Yard.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Canaletto_-_The_Stonemason%27s_Yard.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Giovanni Antonio Canal",
+    "credit": "http://www.nationalgallery.org.uk/paintings/canaletto-the-stonemasons-yard"
+  },
+  "rigaud": {
+    "file": "rigaud.jpg",
+    "commonsTitle": "File:Hyacinthe Rigaud - Louis de France, Dauphin (1661-1711), dit le Grand Dauphin - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hyacinthe_Rigaud_-_Louis_de_France,_Dauphin_(1661-1711),_dit_le_Grand_Dauphin_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "After Joseph Parrocel / Workshop of Hyacinthe Rigaud",
+    "credit": "Google Arts & Culture — awFNo9mgo4zfmg"
+  },
+  "poussin": {
+    "file": "poussin.jpg",
+    "commonsTitle": "File:Nicolas Poussin - Et in Arcadia ego (deuxième version).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_-_Et_in_Arcadia_ego_(deuxi%C3%A8me_version).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Nicolas Poussin",
+    "credit": ""
+  },
+  "watteau": {
+    "file": "watteau.jpg",
+    "commonsTitle": "File:L'Embarquement pour Cythère, by Antoine Watteau, from C2RMF retouched.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:L%27Embarquement_pour_Cyth%C3%A8re,_by_Antoine_Watteau,_from_C2RMF_retouched.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Jean-Antoine Watteau",
+    "credit": "Retouched from File:L'Embarquement pour Cythere, by Antoine Watteau, from C2RMF.jpg , originally C2RMF: Galerie de tableaux en très haute définition : image page"
+  },
+  "hogarth": {
+    "file": "hogarth.jpg",
+    "commonsTitle": "File:Marriage A-la-Mode 1, The Marriage Settlement - William Hogarth.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Marriage_A-la-Mode_1,_The_Marriage_Settlement_-_William_Hogarth.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "William Hogarth",
+    "credit": "The National Gallery"
+  },
+  "chardin": {
+    "file": "chardin.jpg",
+    "commonsTitle": "File:La Raie - Jean Baptiste Siméon Chardin - Musée du Louvre Peintures INV 3197.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:La_Raie_-_Jean_Baptiste_Sim%C3%A9on_Chardin_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3197.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Jean-Baptiste-Siméon Chardin",
+    "credit": "photo Shonagon 2022-06-21"
+  },
+  "gainsborough": {
+    "file": "gainsborough.jpg",
+    "commonsTitle": "File:Thomas Gainsborough - Mr and Mrs Andrews.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Thomas Gainsborough",
+    "credit": "The National Gallery"
+  },
+  "horatii": {
+    "file": "horatii.jpg",
+    "commonsTitle": "File:Jacques-Louis David - Oath of the Horatii - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_Oath_of_the_Horatii_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Anne-Louis Girodet / After Jacques-Louis David",
+    "credit": "KwHkqyZxc2i04A at Google Cultural Institute maximum zoom level"
+  },
+  "goya": {
+    "file": "goya.jpg",
+    "commonsTitle": "File:El Tres de Mayo, by Francisco de Goya, from Prado thin black margin.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_in_Google_Earth.jpg : Francisco de Goya derivative work: Papa Lima Whiskey 2",
+    "credit": "This file was derived from: El Tres de Mayo, by Francisco de Goya, from Prado in Google Earth.jpg :"
+  },
+  "wanderer": {
+    "file": "wanderer.jpg",
+    "commonsTitle": "File:Caspar David Friedrich - Wanderer above the sea of fog.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Caspar David Friedrich",
+    "credit": "The photographic reproduction was done by Cybershot800i . ( Diff )"
+  },
+  "liberty": {
+    "file": "liberty.jpg",
+    "commonsTitle": "File:Eugène Delacroix - Liberty Leading the People (28th July 1830) - WGA6177.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Liberty_Leading_the_People_(28th_July_1830)_-_WGA6177.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Eugène Delacroix",
+    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"_m/d/delacroi/2/208delac\""
+  },
+  "olympia": {
+    "file": "olympia.jpg",
+    "commonsTitle": "File:Edouard Manet - Olympia - Google Art Project 3.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Édouard Manet",
+    "credit": "Google Art Project: Home - pic Maximum resolution. Colours edited by uploader"
+  },
+  "impression": {
+    "file": "impression.jpg",
+    "commonsTitle": "File:Monet - Impression, Sunrise.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Monet_-_Impression,_Sunrise.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Claude Monet",
+    "credit": "art database"
+  },
+  "cezanne": {
+    "file": "cezanne.jpg",
+    "commonsTitle": "File:La Montagne Sainte-Victoire vue de la carrière Bibémus, par Paul Cézanne.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:La_Montagne_Sainte-Victoire_vue_de_la_carri%C3%A8re_Bib%C3%A9mus,_par_Paul_C%C3%A9zanne.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Paul Cézanne",
+    "credit": "1. The Yorck Project (2002) 10.000 Meisterwerke der Malerei (DVD-ROM), distributed by DIRECTMEDIA Publishing GmbH. ISBN : 3936122202 . 2. Google Arts & Culture"
+  },
+  "starry": {
+    "file": "starry.jpg",
+    "commonsTitle": "File:VanGogh-starry night ballance1.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:VanGogh-starry_night_ballance1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Vincent van Gogh",
+    "credit": "Transferred from the English Wikipedia"
+  },
+  "seurat": {
+    "file": "seurat.jpg",
+    "commonsTitle": "File:A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Georges Seurat",
+    "credit": "https://www.bostonglobe.com/arts/theater-dance/2016/09/01/huntington-two-georges-one-sondheim/OR1D4DPM8GsME67aXEjWiP/story.html"
+  },
+  "malevich": {
+    "file": "malevich.jpg",
+    "commonsTitle": "File:Black Square (Malevich, 1915, GTG) by shakko 01.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Black_Square_(Malevich,_1915,_GTG)_by_shakko_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Shakko",
+    "credit": "Own work"
+  },
+  "mondrian": {
+    "file": "mondrian.jpg",
+    "commonsTitle": "File:Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Piet_Mondriaan,_1930_-_Mondrian_Composition_II_in_Red,_Blue,_and_Yellow.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Piet Mondrian",
+    "credit": "[1]"
+  },
+  "kandinsky": {
+    "file": "kandinsky.jpg",
+    "commonsTitle": "File:Kandinsky - Composition 8, July 1923.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Kandinsky_-_Composition_8,_July_1923.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Xyxyzyz",
+    "credit": "Own work"
   }
 }

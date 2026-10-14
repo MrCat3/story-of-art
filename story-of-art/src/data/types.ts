@@ -5,6 +5,9 @@ export type Work = {
   year: string;
   place: string;
   look: string;
+  context?: string;
+  inBook?: string;
+  style?: string;
 };
 
 export type Chapter = {
@@ -12,6 +15,9 @@ export type Chapter = {
   part: 1 | 2 | 3 | 4;
   title: string;
   when: string;
+  teaser?: string;
+  authorNote?: string[];
+  styleNote?: string[];
   paragraphs: string[];
   hinge: string;
   exercise: string;

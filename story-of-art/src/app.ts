@@ -11,6 +11,7 @@ import { getImageCredit, imageSrc } from "./lib/images";
 
 type Route =
   | { name: "home" }
+  | { name: "part"; id: number }
   | { name: "read"; id: string }
   | { name: "derive" };
 
@@ -18,12 +19,58 @@ function parseRoute(): Route {
   const hash = location.hash.replace(/^#\/?/, "");
   if (!hash || hash === "home") return { name: "home" };
   if (hash === "derive") return { name: "derive" };
+  if (hash.startsWith("part/")) {
+    const id = Number(hash.slice(5));
+    if (id >= 1 && id <= 4) return { name: "part", id };
+  }
   if (hash.startsWith("read/")) return { name: "read", id: hash.slice(5) };
   return { name: "home" };
 }
 
-function navLink(label: string, hash: string, active: boolean) {
-  return `<a class="nav-link${active ? " is-active" : ""}" href="#${hash}">${label}</a>`;
+function chapterAccession(id: string) {
+  if (id === "intro") return "READ · 导论";
+  return `READ · ${id.replace("c", "").padStart(2, "0")}`;
+}
+
+function chapterListLabel(id: string, ch: ReturnType<typeof getChapter>) {
+  if (id === "intro") return "导论";
+  const num = id.replace("c", "");
+  return `${num}. ${ch.title}`;
+}
+
+function teaser(ch: ReturnType<typeof getChapter>) {
+  return ch.teaser ?? ch.paragraphs[0];
+}
+
+function topbar(route: Route) {
+  const home = route.name === "home";
+  const derive = route.name === "derive";
+  return `<header class="topbar">
+    <a class="brand" href="#home">${site.title}</a>
+    <nav class="topnav">
+      <a class="${home ? "active" : ""}" href="#home">入门</a>
+      <a class="${derive ? "active" : ""}" href="#derive">衍生</a>
+    </nav>
+  </header>`;
+}
+
+function sidebar(activeId?: string) {
+  const blocks = parts
+    .map((part) => {
+      const links = part.chapters
+        .map((id) => {
+          const ch = getChapter(id);
+          const active = id === activeId ? " is-active" : "";
+          return `<li><a class="toc-link${active}" href="#read/${id}">${chapterListLabel(id, ch)}</a></li>`;
+        })
+        .join("");
+      return `<div class="toc-part">
+        <a class="toc-part-title" href="#part/${part.id}">${part.title}</a>
+        <ul class="toc-chapters">${links}</ul>
+      </div>`;
+    })
+    .join("");
+  return `<aside class="sidebar" aria-label="章节目录">${blocks}</aside>`;
 }
 
 function workCard(id: string) {
@@ -34,20 +81,38 @@ function workCard(id: string) {
     ? `<figure class="work-figure">
         <img src="${src}" alt="${work.title}" loading="lazy" />
         <figcaption>
-          <span class="license">${credit?.license ?? ""}</span>
+          <span>${credit?.license ?? ""}</span>
           ${credit?.commonsPage ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>` : ""}
         </figcaption>
       </figure>`
-    : `<div class="work-missing">暂无本地高清图。请到博物馆开放收藏或 Google Arts & Culture 搜索「${work.title}」。</div>`;
+    : `<div class="work-missing">本地暂无图。可在 Google Arts & Culture 或博物馆开放收藏搜索「${work.title}」。</div>`;
+
+  const extra = [
+    work.context && `<p><span class="work-label">背景</span>${work.context}</p>`,
+    work.inBook && `<p><span class="work-label">书中位置</span>${work.inBook}</p>`,
+    work.style && `<p><span class="work-label">形式与风格</span>${work.style}</p>`,
+    `<p><span class="work-label">看哪里</span>${work.look}</p>`,
+  ]
+    .filter(Boolean)
+    .join("");
+
   return `<article class="work-card" id="work-${id}">
     ${img}
     <div class="work-body">
       <h3>${work.title}</h3>
       <p class="work-meta">${work.artist} · ${work.year}</p>
       <p class="work-place">${work.place}</p>
-      <p class="work-look"><strong>看这里：</strong>${work.look}</p>
+      <div class="work-notes">${extra}</div>
     </div>
   </article>`;
+}
+
+function noteSection(title: string, items?: string[]) {
+  if (!items?.length) return "";
+  return `<section class="block block-note">
+    <h2>${title}</h2>
+    ${items.map((p) => `<p>${p}</p>`).join("")}
+  </section>`;
 }
 
 function chapterNav(currentId: string) {
@@ -55,8 +120,8 @@ function chapterNav(currentId: string) {
   const prev = index > 0 ? chapters[index - 1] : null;
   const next = index < chapters.length - 1 ? chapters[index + 1] : null;
   return `<nav class="chapter-nav">
-    ${prev ? `<a href="#read/${prev.id}">← ${prev.title}</a>` : "<span></span>"}
-    ${next ? `<a href="#read/${next.id}">${next.title} →</a>` : "<span></span>"}
+    ${prev ? `<a href="#read/${prev.id}">上一章：${prev.title}</a>` : "<span></span>"}
+    ${next ? `<a href="#read/${next.id}">下一章：${next.title}</a>` : "<span></span>"}
   </nav>`;
 }
 
@@ -64,76 +129,108 @@ function renderHome() {
   const partCards = parts
     .map(
       (part) => `
-      <section class="part-card">
-        <header>
-          <p class="part-kicker">第 ${part.id} 段</p>
-          <h2>${part.title}</h2>
-          <p>${part.subtitle}</p>
-        </header>
-        <ol class="chapter-list">
-          ${part.chapters
-            .map((id) => {
-              const ch = getChapter(id);
-              const label = id === "intro" ? "导论" : ch.title;
-              return `<li><a href="#read/${id}">${label}</a><span>${ch.when}</span></li>`;
-            })
-            .join("")}
-        </ol>
-      </section>`,
+      <a class="part-door" href="#part/${part.id}">
+        <span class="part-door-num">${part.id}</span>
+        <span class="part-door-body">
+          <strong>${part.title}</strong>
+          <span>${part.subtitle}</span>
+          <span class="part-door-meta">${part.chapters.length} 章</span>
+        </span>
+      </a>`,
     )
     .join("");
 
-  return `<div class="page">
-    <header class="hero">
-      <p class="eyebrow">${site.subtitle}</p>
-      <h1>${site.title}</h1>
-      <p class="lede">按书章拆解，每章有浓缩说明、衔接句、练习与作品图。适合第一次读贡布里希的人，也适合想快速复习全书结构的人。</p>
+  return `<div class="page-home">
+    <section class="hero-panel">
+      <p class="accession">GOMBRICH · STORY OF ART</p>
+      <h1>按章读《艺术的故事》</h1>
+      <p class="hero-lead">每章分开写：贡布里希在这一章里做什么、时代风格是什么、三件作品怎么读。文字是浓缩导读，不是原书摘抄。</p>
       <div class="hero-actions">
-        <a class="button primary" href="#read/intro">从导论开始</a>
-        <a class="button" href="#derive">衍生学习</a>
+        <a class="btn btn-primary" href="#read/intro">从导论开始</a>
+        <a class="btn" href="#part/1">浏览第一段目录</a>
       </div>
-      <p class="disclaimer">${site.disclaimer}</p>
-    </header>
-    <section class="how">
-      <h2>怎么用</h2>
-      <ul>
-        <li>先读一段（四个大段），再进单章，不要一次跳二十八章。</li>
-        <li>每章先看三件作品里的「看这里」，再读文字。</li>
-        <li>做完练习再点下一章，比连续刷完更有效。</li>
-      </ul>
     </section>
-    ${partCards}
+    <section class="part-doors" aria-label="全书四段">
+      <h2 class="section-title">全书分四段进入</h2>
+      <div class="part-door-grid">${partCards}</div>
+    </section>
+    <details class="fold-help">
+      <summary>阅读建议</summary>
+      <ul>
+        <li>先选一段，再进单章；不必在首页展开全部二十八章。</li>
+        <li>章内先看作品图与「看哪里」，再读文字。</li>
+        <li>导论与前几章内容最厚，其余章将逐步补全同样结构。</li>
+      </ul>
+    </details>
+    <p class="fine-print">${site.disclaimer}</p>
+  </div>`;
+}
+
+function renderPart(partId: number) {
+  const part = parts.find((p) => p.id === partId);
+  if (!part) return renderHome();
+
+  const rows = part.chapters
+    .map((id) => {
+      const ch = getChapter(id);
+      return `<li class="part-row">
+        <a href="#read/${id}">
+          <span class="part-row-acc">${chapterAccession(id)}</span>
+          <span class="part-row-title">${chapterListLabel(id, ch)}</span>
+          <span class="part-row-when">${ch.when}</span>
+          <span class="part-row-teaser">${teaser(ch)}</span>
+        </a>
+      </li>`;
+    })
+    .join("");
+
+  return `<div class="layout-read">
+    ${sidebar()}
+    <div class="main">
+      <p class="breadcrumb"><a href="#home">入门</a> / 第 ${partId} 段</p>
+      <header class="chapter-head">
+        <h1>${part.title}</h1>
+        <p class="chapter-when">${part.subtitle}</p>
+      </header>
+      <ol class="part-catalog">${rows}</ol>
+      <p class="part-back"><a href="#home">返回四段总览</a></p>
+    </div>
   </div>`;
 }
 
 function renderChapter(id: string) {
   const chapter = getChapter(id);
-  const part = parts.find((p) => p.id === chapter.part);
   const works = chapter.workIds.map(workCard).join("");
-  const heading = id === "intro" ? "导论" : `第 ${id.replace("c", "")} 章`;
-  return `<div class="page read">
-    <p class="breadcrumb"><a href="#home">目录</a> · ${part?.title ?? ""}</p>
-    <header class="chapter-head">
-      <p class="chapter-kicker">${heading}</p>
-      <h1>${chapter.title}</h1>
-      <p class="chapter-when">${chapter.when}</p>
-    </header>
-    <section class="prose">
-      ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
-    </section>
-    <aside class="hinge">
-      <h2>承上启下</h2>
-      <p>${chapter.hinge}</p>
-    </aside>
-    <section class="works">
-      <h2>本章作品</h2>
-      <div class="work-grid">${works}</div>
-    </section>
-    <aside class="exercise">
-      <h2>练习</h2>
-      <p>${chapter.exercise}</p>
-    </aside>
-    ${chapterNav(id)}
+
+  return `<div class="layout-read">
+    ${sidebar(id)}
+    <div class="main">
+      <p class="breadcrumb"><a href="#home">入门</a> / <a href="#part/${chapter.part}">第 ${chapter.part} 段</a></p>
+      <header class="chapter-head">
+        <p class="accession">${chapterAccession(id)}</p>
+        <h1>${chapter.title}</h1>
+        <p class="chapter-when">${chapter.when}</p>
+      </header>
+      ${noteSection("贡布里希在这一章", chapter.authorNote)}
+      ${noteSection("风格与时代问题", chapter.styleNote)}
+      <section class="block block-prose">
+        <h2>本章叙述</h2>
+        ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
+      </section>
+      <section class="block block-works">
+        <h2>作品</h2>
+        <div class="work-stack">${works}</div>
+      </section>
+      <section class="block block-hinge">
+        <h2>承上启下</h2>
+        <p>${chapter.hinge}</p>
+      </section>
+      <section class="block block-exercise">
+        <h2>练习</h2>
+        <p>${chapter.exercise}</p>
+      </section>
+      ${chapterNav(id)}
+    </div>
   </div>`;
 }
 
@@ -158,49 +255,25 @@ function renderDerive() {
   const terms = glossary
     .map((g) => `<dt>${g.term}</dt><dd>${g.def}</dd>`)
     .join("");
-  const bounds = boundaries.map((b) => `<li>${b}</li>`).join("");
-  const links = museums
-    .map((m) => `<li><a href="${m.url}" target="_blank" rel="noopener">${m.name}</a></li>`)
-    .join("");
 
-  return `<div class="page derive">
-    <header>
+  return `<div class="layout-read">
+    ${sidebar()}
+    <div class="main derive">
       <h1>衍生学习</h1>
-      <p>对照、词汇、书的边界，以及继续看图的去处。</p>
-    </header>
-    <section>
-      <h2>对照看图</h2>
-      <div class="pair-grid">${pairs}</div>
-    </section>
-    <section>
-      <h2>小词典</h2>
-      <dl class="glossary">${terms}</dl>
-    </section>
-    <section>
-      <h2>读这本书时要记住的缺口</h2>
-      <ul class="bounds">${bounds}</ul>
-    </section>
-    <section>
-      <h2>继续看图</h2>
-      <ul class="museum-list">${links}</ul>
-      <p class="note">Google Arts 与 WikiArt 适合浏览；本站本地图来自 Wikimedia Commons 开放许可文件，不批量抓取 WikiArt 图库。</p>
-    </section>
+      <p class="derive-lead">对照、词汇、书的边界与继续看图的去处。</p>
+      <section class="block"><h2>对照看图</h2><div class="pair-grid">${pairs}</div></section>
+      <section class="block"><h2>小词典</h2><dl class="glossary">${terms}</dl></section>
+      <section class="block"><h2>书的边界</h2><ul>${boundaries.map((b) => `<li>${b}</li>`).join("")}</ul></section>
+      <section class="block"><h2>继续看图</h2><ul class="museum-list">${museums.map((m) => `<li><a href="${m.url}" target="_blank" rel="noopener">${m.name}</a></li>`).join("")}</ul></section>
+    </div>
   </div>`;
-}
-
-function shell(body: string, route: Route) {
-  return `${navLink("目录", "home", route.name === "home")}
-    ${navLink("衍生", "derive", route.name === "derive")}
-    ${body}
-    <footer class="site-footer">
-      <p>学习支架 · 非商业导读 · 图像许可见各图注</p>
-    </footer>`;
 }
 
 export function render() {
   const route = parseRoute();
   const app = document.querySelector<HTMLElement>("#app");
   if (!app) return;
+
   let body = "";
   if (route.name === "read") {
     try {
@@ -210,6 +283,9 @@ export function render() {
       body = renderHome();
       document.title = site.title;
     }
+  } else if (route.name === "part") {
+    body = renderPart(route.id);
+    document.title = `第 ${route.id} 段 · ${site.title}`;
   } else if (route.name === "derive") {
     body = renderDerive();
     document.title = `衍生学习 · ${site.title}`;
@@ -217,6 +293,7 @@ export function render() {
     body = renderHome();
     document.title = site.title;
   }
-  app.innerHTML = shell(body, route);
-  app.className = "shell";
+
+  app.className = "app";
+  app.innerHTML = `${topbar(route)}${body}<footer class="site-footer">学习支架 · 图像许可见各图注</footer>`;
 }
