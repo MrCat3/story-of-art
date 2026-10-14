@@ -5,6 +5,8 @@ export type Work = {
   year: string;
   place: string;
   look: string;
+  /** 英文检索名，用于 Google Arts / WikiArt */
+  query?: string;
   context?: string;
   inBook?: string;
   style?: string;

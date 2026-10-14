@@ -179,12 +179,12 @@ function renderChapter(id: string) {
     ? chapter.workIds.filter((workId) => !used.has(workId))
     : chapter.workIds;
   for (const workId of leftover) body.push(workCard(workId));
-  body.push(`<p class="point">${withMarks(chapter.hinge, marks)}</p>`);
+  body.push(`<p>${withMarks(chapter.hinge, marks)}</p>`);
 
   const aside = [
     chapter.prior && `<p>${escapeHtml(chapter.prior)}</p>`,
     chapter.conflict && `<p>${escapeHtml(chapter.conflict)}</p>`,
-    chapter.revision && `<p>${escapeHtml(chapter.revision)}</p>`,
+    chapter.revision && `<p class="point">${escapeHtml(chapter.revision)}</p>`,
     `<p>${escapeHtml(chapter.exercise)}</p>`,
   ]
     .filter(Boolean)
@@ -194,7 +194,7 @@ function renderChapter(id: string) {
     .map((workId) => {
       const work = getWork(workId);
       const credit = getImageCredit(workId);
-      const q = encodeURIComponent(`${work.title} ${work.artist}`);
+      const q = encodeURIComponent(work.query ?? work.title);
       const arts = `https://artsandculture.google.com/search?q=${q}`;
       const wiki = `https://www.wikiart.org/en/search/${q}`;
       const commons = credit?.commonsPage

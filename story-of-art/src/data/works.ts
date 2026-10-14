@@ -1,6 +1,7 @@
 import type { Work } from "./types";
+import { extras } from "./work-extra";
 
-export const works: Work[] = [
+const catalog: Work[] = [
   {
     id: "willendorf",
     title: "威伦道夫的维纳斯",
@@ -709,6 +710,11 @@ export const works: Work[] = [
     look: "圆、角和线在互相回应。他把音乐式的安排当成画的内容，故事退出了。",
   },
 ];
+
+export const works: Work[] = catalog.map((work) => ({
+  ...work,
+  ...(extras[work.id] ?? {}),
+}));
 
 const byId = new Map(works.map((work) => [work.id, work]));
 
