@@ -38,10 +38,6 @@ function chapterListLabel(id: string, ch: ReturnType<typeof getChapter>) {
   return `${num}. ${ch.title}`;
 }
 
-function teaser(ch: ReturnType<typeof getChapter>) {
-  return ch.teaser ?? ch.paragraphs[0];
-}
-
 function topbar(route: Route) {
   const home = route.name === "home";
   const derive = route.name === "derive";
@@ -54,23 +50,34 @@ function topbar(route: Route) {
   </header>`;
 }
 
-function sidebar(activeId?: string) {
-  const blocks = parts
-    .map((part) => {
-      const links = part.chapters
-        .map((id) => {
-          const ch = getChapter(id);
-          const active = id === activeId ? " is-active" : "";
-          return `<li><a class="toc-link${active}" href="#read/${id}">${chapterListLabel(id, ch)}</a></li>`;
-        })
-        .join("");
-      return `<div class="toc-part">
-        <a class="toc-part-title" href="#part/${part.id}">${part.title}</a>
-        <ul class="toc-chapters">${links}</ul>
-      </div>`;
+function partSwitch() {
+  return `<nav class="part-switch" aria-label="切换段落">
+    ${parts
+      .map(
+        (p) =>
+          `<a href="#part/${p.id}" title="${p.subtitle}">${p.id}</a>`,
+      )
+      .join("")}
+  </nav>`;
+}
+
+/** 只显示当前段的章节，避免 28 章侧栏堆在一起 */
+function partChapterNav(partId: number, activeId?: string) {
+  const part = parts.find((p) => p.id === partId);
+  if (!part) return "";
+  const items = part.chapters
+    .map((id) => {
+      const ch = getChapter(id);
+      const active = id === activeId ? " is-active" : "";
+      const short = id === "intro" ? "导论" : ch.title;
+      return `<li><a class="local-link${active}" href="#read/${id}">${short}</a></li>`;
     })
     .join("");
-  return `<aside class="sidebar" aria-label="章节目录">${blocks}</aside>`;
+  return `<nav class="local-nav">
+    <p class="local-nav-heading"><a href="#part/${partId}">${part.title}</a></p>
+    <ul>${items}</ul>
+    ${partSwitch()}
+  </nav>`;
 }
 
 function workCard(id: string) {
@@ -147,11 +154,11 @@ function renderHome() {
       <p class="hero-lead">每章分开写：贡布里希在这一章里做什么、时代风格是什么、三件作品怎么读。文字是浓缩导读，不是原书摘抄。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#read/intro">从导论开始</a>
-        <a class="btn" href="#part/1">浏览第一段目录</a>
       </div>
+      <p class="hero-hint">全书拆成四段。点下面卡片进入<strong>该段章节列表</strong>（只看这一段，不是二十八章一页摊开）。</p>
     </section>
     <section class="part-doors" aria-label="全书四段">
-      <h2 class="section-title">全书分四段进入</h2>
+      <h2 class="section-title">选一段开始</h2>
       <div class="part-door-grid">${partCards}</div>
     </section>
     <details class="fold-help">
@@ -173,25 +180,24 @@ function renderPart(partId: number) {
   const rows = part.chapters
     .map((id) => {
       const ch = getChapter(id);
-      return `<li class="part-row">
-        <a href="#read/${id}">
-          <span class="part-row-acc">${chapterAccession(id)}</span>
-          <span class="part-row-title">${chapterListLabel(id, ch)}</span>
-          <span class="part-row-when">${ch.when}</span>
-          <span class="part-row-teaser">${teaser(ch)}</span>
+      return `<li>
+        <a class="catalog-row" href="#read/${id}">
+          <span class="catalog-title">${chapterListLabel(id, ch)}</span>
+          <span class="catalog-when">${ch.when}</span>
         </a>
       </li>`;
     })
     .join("");
 
-  return `<div class="layout-read">
-    ${sidebar()}
+  return `<div class="layout-single">
     <div class="main">
       <p class="breadcrumb"><a href="#home">入门</a> / 第 ${partId} 段</p>
       <header class="chapter-head">
         <h1>${part.title}</h1>
         <p class="chapter-when">${part.subtitle}</p>
+        <p class="part-blurb">${part.blurb}</p>
       </header>
+      ${partSwitch()}
       <ol class="part-catalog">${rows}</ol>
       <p class="part-back"><a href="#home">返回四段总览</a></p>
     </div>
@@ -203,7 +209,7 @@ function renderChapter(id: string) {
   const works = chapter.workIds.map(workCard).join("");
 
   return `<div class="layout-read">
-    ${sidebar(id)}
+    ${partChapterNav(chapter.part, id)}
     <div class="main">
       <p class="breadcrumb"><a href="#home">入门</a> / <a href="#part/${chapter.part}">第 ${chapter.part} 段</a></p>
       <header class="chapter-head">
@@ -256,8 +262,7 @@ function renderDerive() {
     .map((g) => `<dt>${g.term}</dt><dd>${g.def}</dd>`)
     .join("");
 
-  return `<div class="layout-read">
-    ${sidebar()}
+  return `<div class="layout-single">
     <div class="main derive">
       <h1>衍生学习</h1>
       <p class="derive-lead">对照、词汇、书的边界与继续看图的去处。</p>
