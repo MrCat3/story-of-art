@@ -154,8 +154,7 @@ h1 {
 }
 
 .plate {
-  position: sticky;
-  top: 1.5rem;
+  position: static;
 }
 
 .work-card { margin: 0 0 2.5rem; }
@@ -207,9 +206,9 @@ h1 {
 .chapter-nav {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 2.5rem;
-  padding-top: 1rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--ink);
   font-family: var(--text);
   font-size: 1rem;

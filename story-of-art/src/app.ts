@@ -196,11 +196,11 @@ function renderChapter(id: string) {
           <h2>你来做一次</h2>
           <p>${chapter.exercise}</p>
         </section>
-        ${chapterNav(id)}
       </div>
       <aside class="plate">${plate}</aside>
     </div>
     ${more ? `<section class="more-works">${more}</section>` : ""}
+    ${chapterNav(id)}
   </article>`;
 }
 
