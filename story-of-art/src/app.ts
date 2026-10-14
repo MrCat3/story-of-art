@@ -125,7 +125,7 @@ function renderHome() {
   return `<div class="page-home">
     <p class="book-kicker">贡布里希 · 范景中译</p>
     <h1>艺术的故事</h1>
-    <p class="deck">按书的顺序读。先选一段，再进一章。每一章写作者在纠正什么、这个时代的图像习惯，以及三件作品怎么看。</p>
+    <p class="deck">每一章先是这本书的论证和它用来讲解的作品，浓缩过，不是摘抄。练习和对照放在章末，标题是衍生。</p>
     <ol class="thread">${thread}</ol>
     <p class="colophon">${site.disclaimer}</p>
   </div>`;
@@ -168,7 +168,6 @@ function renderChapter(id: string) {
   }
   const used = new Set<string>();
   const body: string[] = [];
-  if (chapter.prior) body.push(`<p>${withMarks(chapter.prior, marks)}</p>`);
   chapter.paragraphs.forEach((paragraph, index) => {
     body.push(`<p>${withMarks(paragraph, marks)}</p>`);
     for (const workId of inserts.get(index) ?? []) {
@@ -176,18 +175,20 @@ function renderChapter(id: string) {
       body.push(workCard(workId));
     }
   });
-  if (!chapter.inserts?.length) {
-    for (const workId of chapter.workIds) body.push(workCard(workId));
-  } else {
-    for (const workId of chapter.workIds) {
-      if (!used.has(workId)) body.push(workCard(workId));
-    }
-  }
-  if (chapter.revision) {
-    body.push(`<p class="point">${withMarks(chapter.revision, marks)}</p>`);
-  }
-  body.push(`<p>${withMarks(chapter.hinge, marks)}</p>`);
-  body.push(`<p class="do">${withMarks(chapter.exercise, marks)}</p>`);
+  const leftover = chapter.inserts?.length
+    ? chapter.workIds.filter((workId) => !used.has(workId))
+    : chapter.workIds;
+  for (const workId of leftover) body.push(workCard(workId));
+  body.push(`<p class="point">${withMarks(chapter.hinge, marks)}</p>`);
+
+  const aside = [
+    chapter.prior && `<p>${escapeHtml(chapter.prior)}</p>`,
+    chapter.conflict && `<p>${escapeHtml(chapter.conflict)}</p>`,
+    chapter.revision && `<p>${escapeHtml(chapter.revision)}</p>`,
+    `<p>${escapeHtml(chapter.exercise)}</p>`,
+  ]
+    .filter(Boolean)
+    .join("");
 
   return `<article class="sheet sheet-chapter">
     <p class="crumb"><a href="#home">全书</a> / <a href="#part/${chapter.part}">${part?.title ?? ""}</a></p>
@@ -196,6 +197,11 @@ function renderChapter(id: string) {
       <h1>${chapter.title}</h1>
     </header>
     <div class="essay">${body.join("")}</div>
+    <section class="afterword">
+      <h2>衍生</h2>
+      <p class="afterword-note">下面不是原书的叙述，是拿这一章来改你自己的看法。</p>
+      ${aside}
+    </section>
     ${chapterNav(id)}
   </article>`;
 }

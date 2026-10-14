@@ -166,9 +166,26 @@ h1 {
   border-left: 3px solid var(--ribbon);
 }
 
-.do {
+.afterword {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.afterword h2 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ribbon);
+  margin: 0 0 0.4rem;
+}
+
+.afterword-note,
+.afterword p {
   color: var(--quiet);
 }
+
+.afterword p { text-indent: 2em; margin: 0 0 0.9rem; }
+.afterword-note { text-indent: 0; }
 
 strong.key {
   font-weight: 600;
