@@ -177,18 +177,23 @@ function renderChapter(id: string) {
     </header>
     <div class="spread">
       <div class="essay">
-        ${noteSection("贡布里希在这一章", chapter.authorNote)}
-        ${noteSection("这个时代的图像", chapter.styleNote)}
+        ${noteSection("你可能已经这么想", chapter.prior ? [chapter.prior] : undefined)}
+        ${noteSection("看图时哪里对不上", chapter.conflict ? [chapter.conflict] : undefined)}
+        ${noteSection("看法可以改成", chapter.revision ? [chapter.revision] : undefined)}
+        ${chapter.prior ? "" : noteSection("贡布里希在这一章", chapter.authorNote)}
+        ${chapter.prior ? "" : noteSection("这个时代的图像", chapter.styleNote)}
         <section class="block">
-          <h2>顺着读</h2>
+          <h2>${chapter.prior ? "用改过的看法再读" : "顺着读"}</h2>
           ${chapter.paragraphs.map((p) => `<p>${p}</p>`).join("")}
+          ${(chapter.prior ? chapter.authorNote ?? [] : []).map((p) => `<p>${p}</p>`).join("")}
+          ${(chapter.prior ? chapter.styleNote ?? [] : []).map((p) => `<p>${p}</p>`).join("")}
         </section>
         <section class="block">
-          <h2>接到下一章</h2>
+          <h2>带到下一章</h2>
           <p>${chapter.hinge}</p>
         </section>
         <section class="block">
-          <h2>停下来看</h2>
+          <h2>你来做一次</h2>
           <p>${chapter.exercise}</p>
         </section>
         ${chapterNav(id)}

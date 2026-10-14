@@ -16,6 +16,9 @@ export type Chapter = {
   title: string;
   when: string;
   teaser?: string;
+  prior?: string;
+  conflict?: string;
+  revision?: string;
   authorNote?: string[];
   styleNote?: string[];
   paragraphs: string[];
