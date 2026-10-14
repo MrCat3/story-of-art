@@ -80,5 +80,9 @@
   {"id": "seurat", "query": "Seurat A Sunday on La Grande Jatte", "must": ["jatte"], "not": ["stamp"]},
   {"id": "malevich", "query": "Malevich Black Square", "must": ["malevich"], "not": ["stamp"]},
   {"id": "mondrian", "query": "Mondrian Composition red yellow blue", "must": ["mondrian"], "not": ["stamp"]},
-  {"id": "kandinsky", "query": "Kandinsky Composition VIII", "must": ["kandinsky"], "not": ["stamp"]}
+  {"id": "kandinsky", "query": "Kandinsky Composition VIII", "must": ["kandinsky"], "not": ["stamp"]},
+  {"id": "ghent", "query": "Ghent Altarpiece Van Eyck open", "must": ["ghent"], "not": ["stamp", "detail"]},
+  {"id": "last-supper", "query": "Leonardo da Vinci The Last Supper", "must": ["supper"], "not": ["stamp", "copy"]},
+  {"id": "creation-adam", "query": "Michelangelo Creation of Adam", "must": ["adam"], "not": ["stamp"]},
+  {"id": "meninas", "query": "Velazquez Las Meninas", "must": ["meninas"], "not": ["stamp"]}
 ]

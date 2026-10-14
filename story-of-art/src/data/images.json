@@ -431,8 +431,24 @@
     "artist": "Titian",
     "credit": "National Gallery, London - online catalogue ."
   },
-  "bellini": null,
-  "durer": null,
+  "bellini": {
+    "file": "bellini.jpg",
+    "commonsTitle": "File:San Zaccaria Altarpiece.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:San_Zaccaria_Altarpiece.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Ismoon ( talk ) 14:14, 6 March 2014 (UTC)",
+    "credit": "Own work"
+  },
+  "durer": {
+    "file": "durer.jpg",
+    "commonsTitle": "File:Albrecht Dürer - 1500 self-portrait (High resolution and detail).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_1500_self-portrait_(High_resolution_and_detail).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Albrecht Dürer",
+    "credit": "Own work by Fooh2017"
+  },
   "isenheim": {
     "file": "isenheim.jpg",
     "commonsTitle": "File:Isenheimer Altar (Colmar) jm01221 deriv.jpg",
@@ -720,5 +736,41 @@
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "artist": "Xyxyzyz",
     "credit": "Own work"
+  },
+  "ghent": {
+    "file": "ghent.jpg",
+    "commonsTitle": "File:Ghent Altarpiece by Jan van Eyck ALL.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_by_Jan_van_Eyck_ALL.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "未注明",
+    "credit": "focuslife.jouwweb.nl/reizen/gent-2016"
+  },
+  "last-supper": {
+    "file": "last-supper.jpg",
+    "commonsTitle": "File:Leonardo da Vinci (1452-1519) - The Last Supper (1495-1498).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_(1452-1519)_-_The_Last_Supper_(1495-1498).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Leonardo da Vinci",
+    "credit": "Unknown source Unknown source"
+  },
+  "creation-adam": {
+    "file": "creation-adam.jpg",
+    "commonsTitle": "File:The Creation of Adam perspective fix.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:The_Creation_of_Adam_perspective_fix.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Michelangelo",
+    "credit": "Michelangelo. This edit attempts to adjust the perspective caused by the camera lens and the ceiling gradient. The original photo is not perfectly parallel to the depth of the ceiling, which is why the bottom left could not be cropped. This edit tries to simulate what the painting would show if laid on a flat surface. Adam's head is notably more accurate after these changes. Without a laser mapping of the surface, a truly accurate reproduction is impossible."
+  },
+  "meninas": {
+    "file": "meninas.jpg",
+    "commonsTitle": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Las_Meninas,_by_Diego_Vel%C3%A1zquez,_from_Prado_in_Google_Earth.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Diego Velázquez",
+    "credit": "The Prado in Google Earth: Home page 7 th level of zoom, JPEG compression quality: Photoshop 8."
   }
 }
