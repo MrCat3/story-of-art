@@ -34,5 +34,5 @@ export const site = {
   title: "艺术的故事 · 入门导读",
   subtitle: "对照贡布里希《艺术的故事》（范景中译）的自学支架",
   disclaimer:
-    "本站为原创浓缩与练习，不复述原书句子。作品图优先使用 Wikimedia Commons 等开放许可文件；个别现代作品因版权只保留文字说明与外链。",
+    "本站为原创浓缩与练习，不复述原书句子。作品图优先使用 Wikimedia Commons 等开放许可文件。",
 };

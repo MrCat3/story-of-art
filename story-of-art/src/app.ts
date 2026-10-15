@@ -61,24 +61,57 @@ function escapeHtml(text: string) {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function withMarks(text: string, marks: string[] = []) {
+const glosses: [string, string][] = [
+  ["飞扶壁", "墙外面撑住屋顶的石头架子"],
+  ["烟熏法", "轮廓不画死，颜色慢慢化开"],
+  ["消失点", "近大远小的线远远交在一起的那个点"],
+  ["湿壁画", "趁墙灰还湿的时候画上去"],
+  ["祭坛画", "放在教堂祭坛上、常有好几联的画"],
+  ["对立平衡", "一边用力、另一边放松，身体才站得住"],
+  ["短缩", "近处画大、远处画小，比如脚比头大"],
+  ["浮雕", "在平面上凸起来的雕刻"],
+  ["镶嵌", "用彩色小石或玻璃拼成的画"],
+  ["圣像", "给人对着祈祷的宗教像"],
+  ["尖拱", "顶上收成尖角的拱门"],
+  ["图式", "一套先学会、以后可以改的画法"],
+  ["沙龙", "当时公开挂画、让大家来看的展览"],
+  ["透视", "在平面上画出近大远小的深度"],
+  ["巴洛克", "十七世纪用光和动作把人打动的做法"],
+  ["洛可可", "十八世纪宫廷里轻巧、带一点告别感的做法"],
+  ["铜版", "在铜板上刻图，再印到纸上"],
+];
+
+function annotate(html: string, seen: Set<string>) {
+  let next = html;
+  for (const [term, note] of glosses) {
+    if (seen.has(term) || !next.includes(term)) continue;
+    next = next.replace(
+      term,
+      `${term}<span class="gloss">（${note}）</span>`,
+    );
+    seen.add(term);
+  }
+  return next;
+}
+
+function withMarks(text: string, marks: string[] = [], seen?: Set<string>) {
   let html = escapeHtml(text);
   for (const mark of marks) {
     if (!mark) continue;
     const safe = escapeHtml(mark);
     html = html.split(safe).join(`<strong class="key">${safe}</strong>`);
   }
-  return html;
+  return seen ? annotate(html, seen) : html;
 }
 
-function workCard(id: string) {
+function workCard(id: string, seen?: Set<string>) {
   const work = getWork(id);
   const src = imageSrc(id);
   const credit = getImageCredit(id);
   const img = src
     ? `<img src="${src}" alt="${work.title}" loading="lazy" />`
     : work.linkOnly
-      ? `<div class="work-missing">这件作品仍受版权保护，本站不保存图片。用章末链接去看原作。</div>`
+      ? `<div class="work-missing">用章末的链接看这件作品。</div>`
       : `<div class="work-missing">本地暂无图。可到博物馆开放收藏搜索「${work.title}」。</div>`;
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
@@ -92,7 +125,7 @@ function workCard(id: string) {
       <span class="work-kicker">作品</span>
       <span class="work-title">${work.title}</span>
       <span class="work-meta">${work.artist} · ${work.year} · ${work.place}</span>
-      ${prose.map((part) => `<p>${escapeHtml(part)}</p>`).join("")}
+      ${prose.map((part) => `<p>${withMarks(part, [], seen)}</p>`).join("")}
       ${source}
     </figcaption>
   </figure>`;
@@ -170,25 +203,26 @@ function renderChapter(id: string) {
     inserts.set(insert.at, insert.workIds);
   }
   const used = new Set<string>();
+  const seen = new Set<string>();
   const body: string[] = [];
   chapter.paragraphs.forEach((paragraph, index) => {
-    body.push(`<p>${withMarks(paragraph, marks)}</p>`);
+    body.push(`<p>${withMarks(paragraph, marks, seen)}</p>`);
     for (const workId of inserts.get(index) ?? []) {
       used.add(workId);
-      body.push(workCard(workId));
+      body.push(workCard(workId, seen));
     }
   });
   const leftover = chapter.inserts?.length
     ? chapter.workIds.filter((workId) => !used.has(workId))
     : chapter.workIds;
-  for (const workId of leftover) body.push(workCard(workId));
-  body.push(`<p>${withMarks(chapter.hinge, marks)}</p>`);
+  for (const workId of leftover) body.push(workCard(workId, seen));
+  body.push(`<p>${withMarks(chapter.hinge, marks, seen)}</p>`);
 
   const aside = [
-    chapter.prior && `<p>${escapeHtml(chapter.prior)}</p>`,
-    chapter.conflict && `<p>${escapeHtml(chapter.conflict)}</p>`,
-    chapter.revision && `<p class="point">${escapeHtml(chapter.revision)}</p>`,
-    `<p>${escapeHtml(chapter.exercise)}</p>`,
+    chapter.prior && `<p>${withMarks(chapter.prior, [], seen)}</p>`,
+    chapter.conflict && `<p>${withMarks(chapter.conflict, [], seen)}</p>`,
+    chapter.revision && `<p class="point">${withMarks(chapter.revision, [], seen)}</p>`,
+    `<p>${withMarks(chapter.exercise, [], seen)}</p>`,
   ]
     .filter(Boolean)
     .join("");
