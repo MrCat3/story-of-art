@@ -7,6 +7,8 @@ export type Work = {
   look: string;
   /** 英文检索名，用于 Google Arts / WikiArt */
   query?: string;
+  /** 仍受版权保护时不在本站保存图片 */
+  linkOnly?: boolean;
   context?: string;
   inBook?: string;
   style?: string;

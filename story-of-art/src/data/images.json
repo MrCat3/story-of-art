@@ -799,5 +799,41 @@
     "licenseUrl": "",
     "artist": "Orlando Paride",
     "credit": "Own work"
+  },
+  "hay-wain": {
+    "file": "hay-wain.jpg",
+    "commonsTitle": "File:John Constable - The Hay Wain (1821).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:John_Constable_-_The_Hay_Wain_(1821).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "John Constable",
+    "credit": "National Gallery, London via gallerix.ru"
+  },
+  "rain-steam": {
+    "file": "rain-steam.jpg",
+    "commonsTitle": "File:Rain Steam and Speed the Great Western Railway.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rain_Steam_and_Speed_the_Great_Western_Railway.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "J. M. W. Turner",
+    "credit": "http://www.artrenewal.org/pages/artwork.php?artworkid=14508&size=huge"
+  },
+  "burial": {
+    "file": "burial.jpg",
+    "commonsTitle": "File:Gustave Courbet - A Burial at Ornans - Google Art Project 2.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Gustave Courbet",
+    "credit": "Google Art Project: Home - pic Maximum resolution."
+  },
+  "gauguin": {
+    "file": "gauguin.jpg",
+    "commonsTitle": "File:Paul Gauguin - Vision of the Sermon (Jacob Wrestling with the Angel) - NG 1643 - National Galleries of Scotland.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Paul_Gauguin_-_Vision_of_the_Sermon_(Jacob_Wrestling_with_the_Angel)_-_NG_1643_-_National_Galleries_of_Scotland.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Paul Gauguin",
+    "credit": "National Galleries Scotland"
   }
 }

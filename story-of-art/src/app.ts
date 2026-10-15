@@ -77,7 +77,9 @@ function workCard(id: string) {
   const credit = getImageCredit(id);
   const img = src
     ? `<img src="${src}" alt="${work.title}" loading="lazy" />`
-    : `<div class="work-missing">本地暂无图。可到博物馆开放收藏搜索「${work.title}」。</div>`;
+    : work.linkOnly
+      ? `<div class="work-missing">这件作品仍受版权保护，本站不保存图片。用章末链接去看原作。</div>`
+      : `<div class="work-missing">本地暂无图。可到博物馆开放收藏搜索「${work.title}」。</div>`;
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
     : "";

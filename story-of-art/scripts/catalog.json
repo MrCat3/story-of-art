@@ -87,5 +87,9 @@
   {"id": "meninas", "query": "Velazquez Las Meninas", "must": ["meninas"], "not": ["stamp"]},
   {"id": "discobolus", "query": "Discobolus Myron Townley", "must": ["discobolus"], "not": ["stamp", "coin", "drawing"]},
   {"id": "doryphoros", "query": "Doryphoros Polykleitos statue", "must": ["doryphoros"], "not": ["stamp", "coin", "drawing"]},
-  {"id": "innocent", "query": "Velazquez Portrait of Innocent X", "must": ["innocent"], "not": ["stamp", "bacon"]}
+  {"id": "innocent", "query": "Velazquez Portrait of Innocent X", "must": ["innocent"], "not": ["stamp", "bacon"]},
+  {"id": "hay-wain", "query": "Constable The Hay Wain", "must": ["hay"], "not": ["stamp"]},
+  {"id": "rain-steam", "query": "Turner Rain Steam and Speed", "must": ["rain"], "not": ["stamp"]},
+  {"id": "burial", "query": "Courbet Burial at Ornans", "must": ["ornans"], "not": ["stamp"]},
+  {"id": "gauguin", "query": "Gauguin Vision After the Sermon", "must": ["sermon"], "not": ["stamp"]}
 ]
