@@ -11,6 +11,20 @@ export const extras: Record<string, Partial<Work>> = {
   "standard-ur": { query: "Standard of Ur" },
   kouros: { query: "Kroisos Kouros Anavyssos" },
   kritios: { query: "Kritios Boy" },
+  discobolus: {
+    query: "Discobolus of Myron",
+    context: "米隆约公元前 450 年的青铜原作已失，现在各馆的大理石都是罗马复制。最常被提起的是大英博物馆的汤利掷铁饼者。运动员弯腰，铁饼引到身后。",
+    style: "身体连成一个马上要弹开的弧。脸仍平静，肌肉处在动作的中途，而不是摆一个对称的站姿。这是克里提奥斯少年之后，瞬间被做成题目。",
+    inBook: "贡布里希用它说明希腊人学会让身体处于某一刻，而且这一刻看起来必然。它不是更圆的埃及立像。",
+    look: "从支撑的脚看到铁饼，身体是不是一条连续的曲线？脸和四肢哪一边更激动？",
+  },
+  doryphoros: {
+    query: "Doryphoros Polykleitos",
+    context: "波利克里托斯约公元前 440 年的青铜原作已失，现存大理石复制。他写过一本论比例的书，这尊持矛的青年就是那本书的示范。",
+    style: "承重腿和松弛腿相反，髋和肩也相反。头略转。比例安静，可以再做一尊。这是对立平衡被配成规范。",
+    inBook: "觉醒不只是某一次看起来像活人。持矛者把那种站法变成后来可以学习的标准。",
+    look: "哪一条腿承重？如果两肩被画成水平，这尊像的平衡还在吗？",
+  },
   parthenon: { query: "Parthenon frieze horsemen" },
   "venus-milo": {
     query: "Venus de Milo",
@@ -511,6 +525,13 @@ export const extras: Record<string, Partial<Work>> = {
     style: "身体来自雕塑家的理解：亚当的躯干已经有重量，上帝的披风像一块实体。动作还没有完成，意志已经在两只手里。",
     inBook: "天顶把《大卫》里尚未发出的力量铺到一整座礼拜堂。贡布里希讲十六世纪初的人体，不能停在广场上的那一尊雕像。",
     look: "两根手指之间还有没有空隙？亚当的身体是松的，还是已经在回应？",
+  },
+  innocent: {
+    query: "Velazquez Portrait of Innocent X",
+    context: "委拉斯开兹 1650 年在罗马为教皇英诺森十世画的肖像，现藏多利亚·潘菲利美术馆。红绸椅子和白色法衣包着一张紧绷的脸。",
+    style: "没有把权力画成里戈那种袍子和柱子。红是椅子和帽子的红，脸仍是一个会疲倦的人。目光不放过看画的人。",
+    inBook: "《宫娥》讨论谁在看谁。这张肖像是同一双眼睛用在一个人身上：权力被看见，但不被美化。",
+    look: "先看脸，再看红椅子。如果只留衣服和椅子，这还是不是一幅教皇像？",
   },
   meninas: {
     query: "Velazquez Las Meninas",

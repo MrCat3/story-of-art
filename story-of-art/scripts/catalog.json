@@ -84,5 +84,8 @@
   {"id": "ghent", "query": "Ghent Altarpiece Van Eyck open", "must": ["ghent"], "not": ["stamp", "detail"]},
   {"id": "last-supper", "query": "Leonardo da Vinci The Last Supper", "must": ["supper"], "not": ["stamp", "copy"]},
   {"id": "creation-adam", "query": "Michelangelo Creation of Adam", "must": ["adam"], "not": ["stamp"]},
-  {"id": "meninas", "query": "Velazquez Las Meninas", "must": ["meninas"], "not": ["stamp"]}
+  {"id": "meninas", "query": "Velazquez Las Meninas", "must": ["meninas"], "not": ["stamp"]},
+  {"id": "discobolus", "query": "Discobolus Myron Townley", "must": ["discobolus"], "not": ["stamp", "coin", "drawing"]},
+  {"id": "doryphoros", "query": "Doryphoros Polykleitos statue", "must": ["doryphoros"], "not": ["stamp", "coin", "drawing"]},
+  {"id": "innocent", "query": "Velazquez Portrait of Innocent X", "must": ["innocent"], "not": ["stamp", "bacon"]}
 ]

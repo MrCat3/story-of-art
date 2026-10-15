@@ -772,5 +772,32 @@
     "licenseUrl": "",
     "artist": "Diego Velázquez",
     "credit": "The Prado in Google Earth: Home page 7 th level of zoom, JPEG compression quality: Photoshop 8."
+  },
+  "discobolus": {
+    "file": "discobolus.jpg",
+    "commonsTitle": "File:Discobolus in National Roman Museum Palazzo Massimo alle Terme.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Discobolus_in_National_Roman_Museum_Palazzo_Massimo_alle_Terme.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Livioandronico2013",
+    "credit": "Own work"
+  },
+  "doryphoros": {
+    "file": "doryphoros.jpg",
+    "commonsTitle": "File:02 10 2024 Photo Paolo Villa-Napoli-mann-Museo Archeologico-FO232526tris-Arte Greca copia romana-Policleto Doriforo Polykleitos Doryphoros from Pompeii-marmo marble carrara.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:02_10_2024_Photo_Paolo_Villa-Napoli-mann-Museo_Archeologico-FO232526tris-Arte_Greca_copia_romana-Policleto_Doriforo_Polykleitos_Doryphoros_from_Pompeii-marmo_marble_carrara.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "artist": "Paolo Villa",
+    "credit": "This image has been extracted from another file"
+  },
+  "innocent": {
+    "file": "innocent.jpg",
+    "commonsTitle": "File:Portrait of Innocentius X by Diego Velázquez in Galleria Doria Pamphilj (Rome).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Portrait_of_Innocentius_X_by_Diego_Vel%C3%A1zquez_in_Galleria_Doria_Pamphilj_(Rome).jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Orlando Paride",
+    "credit": "Own work"
   }
 }
