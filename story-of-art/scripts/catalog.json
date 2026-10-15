@@ -9,7 +9,7 @@
   {"id": "kouros", "query": "Kroisos Kouros Anavysos", "must": ["kouros"], "not": ["stamp"]},
   {"id": "kritios", "query": "Kritios Boy", "must": ["kritios"], "not": ["stamp", "cast"]},
   {"id": "parthenon", "query": "Parthenon frieze horsemen British Museum", "must": ["parthenon"], "not": ["stamp", "model"]},
-  {"id": "venus-milo", "query": "Venus de Milo", "must": ["milo"], "not": ["stamp", "cartoon"]},
+  {"id": "venus-milo", "query": "Venus de Milo Louvre Ma399 n4", "must": ["ma399"], "not": ["stamp", "cartoon"]},
   {"id": "laocoon", "query": "Laocoon and his sons", "must": ["laocoon"], "not": ["stamp", "drawing"]},
   {"id": "pergamon", "query": "Pergamon Altar Athena frieze", "must": ["pergamon"], "not": ["stamp"]},
   {"id": "augustus", "query": "Augustus of Prima Porta", "must": ["augustus"], "not": ["stamp", "coin"]},

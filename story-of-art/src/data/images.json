@@ -91,12 +91,12 @@
   },
   "venus-milo": {
     "file": "venus-milo.jpg",
-    "commonsTitle": "File:Venus de Milo.JPG",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo.JPG",
-    "license": "CC BY-SA 2.5",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-    "artist": "Unknown author Unknown author",
-    "credit": "Chosovi"
+    "commonsTitle": "File:Venus de Milo Louvre Ma399 n4.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Venus_de_Milo_Louvre_Ma399_n4.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Unknown artist Unknown artist",
+    "credit": "Jastrow (2007)"
   },
   "laocoon": {
     "file": "laocoon.jpg",
@@ -190,8 +190,8 @@
   },
   "fan-kuan": {
     "file": "fan-kuan.jpg",
-    "commonsTitle": "File:Fan Kuan - Travelers Among Mountains and Streams - Signature.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Signature.jpg",
+    "commonsTitle": "File:Fan Kuan - Travelers Among Mountains and Streams - Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Fan_Kuan_-_Travelers_Among_Mountains_and_Streams_-_Google_Art_Project.jpg",
     "license": "Public domain",
     "licenseUrl": "",
     "artist": "Fan Kuan",
@@ -397,11 +397,11 @@
   },
   "michelangelo-david": {
     "file": "michelangelo-david.jpg",
-    "commonsTitle": "File:Florence - David - tête.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Florence_-_David_-_t%C3%AAte.jpg",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "artist": "Eusebius",
+    "commonsTitle": "File:Michelangelo's David with pedestal.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Michelangelo%27s_David_with_pedestal.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Livioandronico2013",
     "credit": "Own work"
   },
   "school-athens": {
@@ -550,12 +550,12 @@
   },
   "san-carlo": {
     "file": "san-carlo.jpg",
-    "commonsTitle": "File:San Carlo alle Quattro Fontane (Rome) - Dome HDR.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:San_Carlo_alle_Quattro_Fontane_(Rome)_-_Dome_HDR.jpg",
+    "commonsTitle": "File:Rome S. Carlo alle Quattro Fontane facade.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Rome_S._Carlo_alle_Quattro_Fontane_facade.jpg",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "artist": "Francesco Borromini",
-    "credit": "Photo: LivioAndronico"
+    "artist": "",
+    "credit": "Own work"
   },
   "tiepolo": {
     "file": "tiepolo.jpg",
