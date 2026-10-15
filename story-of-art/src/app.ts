@@ -87,6 +87,7 @@ function workCard(id: string) {
   return `<figure class="inline-work" id="work-${id}">
     ${img}
     <figcaption>
+      <span class="work-kicker">作品</span>
       <span class="work-title">${work.title}</span>
       <span class="work-meta">${work.artist} · ${work.year} · ${work.place}</span>
       ${prose.map((part) => `<p>${escapeHtml(part)}</p>`).join("")}
