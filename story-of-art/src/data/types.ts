@@ -4,7 +4,6 @@ export type Work = {
   artist: string;
   year: string;
   place: string;
-  look: string;
   /** 英文检索名，用于 Google Arts / WikiArt */
   query?: string;
   /** 没有本地图时，只留章末检索链接 */

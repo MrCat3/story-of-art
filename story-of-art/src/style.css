@@ -291,7 +291,6 @@ strong.key {
 
 .work-title { font-weight: 600; font-size: 1.15rem; color: var(--ink); }
 .work-meta { color: var(--quiet); }
-.work-look { margin-top: 0.25rem; }
 
 .plate {
   position: static;

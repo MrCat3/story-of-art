@@ -169,7 +169,7 @@ function workCard(id: string, seen?: Set<string>) {
     creditBits.length || source
       ? `<p class="work-credit">${creditBits.join(" · ")}${creditBits.length && source ? " · " : ""}${source}</p>`
       : "";
-  const prose = [work.context, work.style, work.inBook, work.look].filter(
+  const prose = [work.context, work.style, work.inBook].filter(
     (part): part is string => Boolean(part),
   );
   return `<figure class="inline-work" id="work-${id}">
