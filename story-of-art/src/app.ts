@@ -154,8 +154,12 @@ function workCard(id: string, seen?: Set<string>) {
   const work = getWork(id);
   const src = imageSrc(id);
   const credit = getImageCredit(id);
+  const dims =
+    credit?.width && credit?.height
+      ? ` width="${credit.width}" height="${credit.height}"`
+      : "";
   const img = src
-    ? `<img src="${src}" alt="${work.title}" loading="lazy" />`
+    ? `<img src="${src}" alt="${work.title}"${dims} loading="lazy" />`
     : work.linkOnly
       ? `<div class="work-missing">用章末的链接看这件作品。</div>`
       : `<div class="work-missing">本地暂无图。可到博物馆开放收藏搜索「${work.title}」。</div>`;

@@ -1,7 +1,11 @@
+import { execFile } from "node:child_process";
 import { createWriteStream } from "node:fs";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, unlink, writeFile } from "node:fs/promises";
 import { pipeline } from "node:stream/promises";
+import { promisify } from "node:util";
 import path from "node:path";
+
+const execFileAsync = promisify(execFile);
 
 const root = path.resolve(import.meta.dirname, "..");
 const catalog = JSON.parse(
@@ -83,6 +87,27 @@ async function download(url, file) {
   await pipeline(response.body, createWriteStream(file));
 }
 
+/** Match the served set: max width 1200, WebP quality 80. */
+async function toWebp(srcPath, destPath) {
+  const py = `
+from PIL import Image
+im = Image.open(${JSON.stringify(srcPath)})
+im.load()
+if im.mode not in ("RGB", "RGBA"):
+    im = im.convert("RGBA" if "A" in im.getbands() else "RGB")
+w, h = im.size
+if w > 1200:
+    h = max(1, round(h * 1200 / w))
+    im = im.resize((1200, h), Image.Resampling.LANCZOS)
+    w, h = im.size
+im.save(${JSON.stringify(destPath)}, "WEBP", quality=80, method=6)
+print(w, h)
+`;
+  const { stdout } = await execFileAsync("python3", ["-c", py]);
+  const [width, height] = stdout.trim().split(/\s+/).map(Number);
+  return { width, height };
+}
+
 let credits = {};
 const creditsPath = path.join(root, "src/data/images.json");
 try {
@@ -121,11 +146,18 @@ for (const item of catalog) {
   }
   const src = chosen.image.thumburl || chosen.image.url;
   const ext = chosen.image.mime === "image/png" ? "png" : "jpg";
-  const filename = `${item.id}.${ext}`;
-  await download(src, path.join(outDir, filename));
+  const rawName = `${item.id}.${ext}`;
+  const rawPath = path.join(outDir, rawName);
+  await download(src, rawPath);
+  const webpName = `${item.id}.webp`;
+  const webpPath = path.join(outDir, webpName);
+  const { width, height } = await toWebp(rawPath, webpPath);
+  await unlink(rawPath);
   const meta = chosen.image.extmetadata ?? {};
   credits[item.id] = {
-    file: filename,
+    file: webpName,
+    width,
+    height,
     commonsTitle: chosen.title,
     commonsPage: chosen.image.descriptionurl,
     license: strip(chosen.license),

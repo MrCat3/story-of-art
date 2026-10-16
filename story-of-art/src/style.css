@@ -4,7 +4,7 @@
   --quiet: #5e584f;
   --rule: #d9d2c5;
   --ribbon: #8d2a24;
-  --text: "Noto Serif SC", "Songti SC", serif;
+  --text: "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", "STSong", "SimSun", "PMingLiU", serif;
 }
 
 * { box-sizing: border-box; }
@@ -264,6 +264,7 @@ strong.key {
 .inline-work img {
   display: block;
   width: 100%;
+  height: auto;
   max-height: 32rem;
   object-fit: contain;
   background: #e7e1d6;

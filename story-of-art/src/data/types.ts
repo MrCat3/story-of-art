@@ -36,6 +36,8 @@ export type Chapter = {
 
 export type ImageCredit = {
   file: string;
+  width?: number;
+  height?: number;
   commonsTitle: string;
   commonsPage: string;
   license: string;
