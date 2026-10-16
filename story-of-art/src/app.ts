@@ -211,9 +211,7 @@ function renderHome() {
   return `<div class="page-home">
     <p class="book-kicker">贡布里希 · 范景中译</p>
     <h1>艺术的故事</h1>
-    <p class="deck">每一章先是这本书的论证和它用来讲解的作品，浓缩过，不是摘抄。练习和对照放在章末，标题是衍生。</p>
     <ol class="thread">${thread}</ol>
-    <p class="colophon">${site.disclaimer}</p>
   </div>`;
 }
 
@@ -305,7 +303,6 @@ function renderChapter(id: string) {
     <div class="essay">${body.join("")}</div>
     <section class="afterword">
       <h2>衍生</h2>
-      <p class="afterword-note">下面不是原书的叙述，是拿这一章来改你自己的看法，再到原作的高清图里核对。</p>
       ${aside}
       <h2>继续看图</h2>
       <ul class="more-looking">${moreLooking}</ul>
@@ -338,7 +335,6 @@ function renderDerive() {
 
   return `<article class="sheet">
       <h1>衍生</h1>
-      <p class="derive-lead">对照、词汇、书的边界与继续看图的去处。</p>
       <section class="block"><h2>对照看图</h2><div class="pair-grid">${pairs}</div></section>
       <section class="block"><h2>小词典</h2><dl class="glossary">${terms}</dl></section>
       <section class="block"><h2>书的边界</h2><ul>${boundaries.map((b) => `<li>${b}</li>`).join("")}</ul></section>
@@ -372,6 +368,17 @@ export function render() {
   }
 
   app.className = "app";
-  app.innerHTML = `${topbar(route)}${body}<footer class="site-footer">学习支架 · 图像许可见各图注</footer>`;
+  app.innerHTML = `${topbar(route)}${body}`;
   bindTerms(app);
+  scrollToStart();
+}
+
+function scrollToStart() {
+  const go = () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+  go();
+  requestAnimationFrame(go);
 }
