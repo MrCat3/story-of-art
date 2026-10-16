@@ -84,17 +84,60 @@ const glosses: [string, string][] = [
   ["波普", "把广告、明星照片这些大众图像做成画"],
 ];
 
+function replacePlainOnce(html: string, term: string, replacement: string) {
+  let from = 0;
+  while (from < html.length) {
+    const idx = html.indexOf(term, from);
+    if (idx < 0) return html;
+    const before = html.slice(0, idx);
+    if (before.lastIndexOf("<") > before.lastIndexOf(">")) {
+      from = idx + term.length;
+      continue;
+    }
+    return html.slice(0, idx) + replacement + html.slice(idx + term.length);
+  }
+  return html;
+}
+
 function annotate(html: string, seen: Set<string>) {
   let next = html;
-  for (const [term, note] of glosses) {
+  const ordered = [...glosses].sort((a, b) => b[0].length - a[0].length);
+  for (const [term, note] of ordered) {
     if (seen.has(term) || !next.includes(term)) continue;
-    next = next.replace(
-      term,
-      `${term}<span class="gloss">（${note}）</span>`,
-    );
+    const safeNote = escapeHtml(note).replace(/"/g, "&quot;");
+    const button = `<button type="button" class="term" data-note="${safeNote}" aria-expanded="false">${term}</button>`;
+    const replaced = replacePlainOnce(next, term, button);
+    if (replaced === next) continue;
+    next = replaced;
     seen.add(term);
   }
   return next;
+}
+
+function bindTerms(root: HTMLElement) {
+  const buttons = [...root.querySelectorAll<HTMLButtonElement>("button.term")];
+  const close = (button: HTMLButtonElement) => {
+    button.setAttribute("aria-expanded", "false");
+    const note = button.nextElementSibling;
+    if (note?.classList.contains("gloss")) note.remove();
+  };
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") === "true";
+      for (const other of buttons) {
+        if (other !== button) close(other);
+      }
+      if (open) {
+        close(button);
+        return;
+      }
+      const note = document.createElement("span");
+      note.className = "gloss";
+      note.textContent = `（${button.dataset.note ?? ""}）`;
+      button.after(note);
+      button.setAttribute("aria-expanded", "true");
+    });
+  }
 }
 
 function withMarks(text: string, marks: string[] = [], seen?: Set<string>) {
@@ -119,6 +162,9 @@ function workCard(id: string, seen?: Set<string>) {
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
     : "";
+  const useNote = credit?.useNote
+    ? `<span class="work-use">${escapeHtml(credit.useNote)}</span>`
+    : "";
   const prose = [work.context, work.style, work.inBook, work.look].filter(
     (part): part is string => Boolean(part),
   );
@@ -129,6 +175,7 @@ function workCard(id: string, seen?: Set<string>) {
       <span class="work-title">${work.title}</span>
       <span class="work-meta">${work.artist} · ${work.year} · ${work.place}</span>
       ${prose.map((part) => `<p>${withMarks(part, [], seen)}</p>`).join("")}
+      ${useNote}
       ${source}
     </figcaption>
   </figure>`;
@@ -326,4 +373,5 @@ export function render() {
 
   app.className = "app";
   app.innerHTML = `${topbar(route)}${body}<footer class="site-footer">学习支架 · 图像许可见各图注</footer>`;
+  bindTerms(app);
 }

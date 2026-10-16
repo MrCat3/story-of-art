@@ -803,7 +803,6 @@ const catalog: Work[] = [
     artist: "巴勃罗·毕加索",
     year: "1907 年",
     place: "纽约现代艺术博物馆",
-    linkOnly: true,
     look: "五个身体被拆成能同时看见的面，不再是一个窗口里的房间。",
   },
   {
@@ -812,7 +811,6 @@ const catalog: Work[] = [
     artist: "亨利·马蒂斯",
     year: "1910 年",
     place: "埃尔米塔日博物馆",
-    linkOnly: true,
     look: "几乎只剩蓝天、绿地和一圈拉着手的人。",
   },
   {
@@ -821,7 +819,6 @@ const catalog: Work[] = [
     artist: "杰克逊·波洛克",
     year: "1950 年",
     place: "纽约大都会艺术博物馆",
-    linkOnly: true,
     look: "颜料被滴洒成一层行动，没有一个要你认出的物体。",
   },
   {
@@ -829,8 +826,7 @@ const catalog: Work[] = [
     title: "玛丽莲双联",
     artist: "安迪·沃霍尔",
     year: "1962 年",
-    place: "泰特现代美术馆等处藏有版本",
-    linkOnly: true,
+    place: "泰特现代美术馆",
     look: "同一张明星照片被重复、上色，广告的脸回到了画布。",
   },
 ];

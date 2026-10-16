@@ -7,7 +7,7 @@ export type Work = {
   look: string;
   /** 英文检索名，用于 Google Arts / WikiArt */
   query?: string;
-  /** 仍受版权保护时不在本站保存图片 */
+  /** 没有本地图时，只留章末检索链接 */
   linkOnly?: boolean;
   context?: string;
   inBook?: string;
@@ -43,4 +43,6 @@ export type ImageCredit = {
   licenseUrl: string;
   artist: string;
   credit: string;
+  /** 权利不清楚时，在图注里写明非商业学习用途 */
+  useNote?: string;
 };

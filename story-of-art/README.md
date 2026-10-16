@@ -26,9 +26,7 @@ npm run build
 npm run images
 ```
 
-从 **Wikimedia Commons** 按开放许可下载到 `public/images/`，并写入 `src/data/images.json`。脚本带限速与断点续传；遇 429 会自动等待重试。
-
-浏览用 **Google Arts & Culture** 很方便，但文件权利在合作博物馆；本站不把 Google / WikiArt 图库批量嵌进页面，只链到开放许可或博物馆页面。
+从 **Wikimedia Commons** 按开放许可下载到 `public/images/`，并写入 `src/data/images.json`。脚本带限速与断点续传；遇 429 会自动等待重试。权利不清楚的几件现代作品仍放本地图，图注写明来源和「非商业学习用途」。
 
 ## 结构
 

@@ -577,7 +577,6 @@ export const extras: Record<string, Partial<Work>> = {
   },
   demoiselles: {
     query: "Picasso Les Demoiselles d'Avignon",
-    linkOnly: true,
     context: "毕加索 1907 年的大画，现藏纽约现代艺术博物馆。五个裸体挤在一个浅浅的空间里，脸有的像非洲面具，有的像从侧面同时看见正面。",
     style: "身体被折成面。背景的布和人几乎同样扁平。这不是一个可以走进去的房间，是把看见的方式拆开。",
     inBook: "实验性美术不只有抽象。把形体拆开，也是在回答「画还做什么」。",
@@ -585,7 +584,6 @@ export const extras: Record<string, Partial<Work>> = {
   },
   dance: {
     query: "Matisse Dance",
-    linkOnly: true,
     context: "马蒂斯 1910 年的《舞蹈》，现藏圣彼得堡埃尔米塔日。五个裸体拉成一圈，背景只有蓝和绿。另有一幅相近的习作在纽约现代艺术博物馆。",
     style: "几乎没有明暗和细节。红色的身体、蓝色的天、绿色的地。节奏来自拉着的手和断开的一处。",
     inBook: "和毕加索拆开形体不同，马蒂斯把颜色单独留下来承担全部内容。",
@@ -593,7 +591,6 @@ export const extras: Record<string, Partial<Work>> = {
   },
   pollock: {
     query: "Pollock Autumn Rhythm",
-    linkOnly: true,
     context: "波洛克 1950 年的《秋天的节奏（第 30 号）》，现藏纽约大都会艺术博物馆。画布铺在地上，颜料被滴、泼、甩上去。",
     style: "没有中心物体，线条层层盖住整幅。题目里的秋天不是一片风景，而是这一次作画留下的节奏。",
     inBook: "贡布里希后补的章节用这类作品说明现代主义的胜利：颜料和行动本身可以成为画。",
@@ -601,7 +598,6 @@ export const extras: Record<string, Partial<Work>> = {
   },
   marilyn: {
     query: "Warhol Marilyn Diptych",
-    linkOnly: true,
     context: "沃霍尔 1962 年的《玛丽莲双联》，现藏伦敦泰特。左边是重复的彩色丝网，右边是同一张照片的黑白，有的几乎印糊了。",
     style: "图像来自明星照片，不是写生。重复和错版让一张脸变成商品。波普把抽象挤到一边之后，广告又回到画面中央。",
     inBook: "这是「潮流再次转向」的例子，不是第27章那种纯构成。",

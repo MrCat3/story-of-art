@@ -478,12 +478,12 @@
   },
   "pontormo": {
     "file": "pontormo.jpg",
-    "commonsTitle": "File:Jacopo Pontormo - Deposition - WGA18113 (cropped).jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jacopo_Pontormo_-_Deposition_-_WGA18113_(cropped).jpg",
+    "commonsTitle": "File:Jacopo da Pontormo - Deposizione.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Jacopo_da_Pontormo_-_Deposizione.jpg",
     "license": "Public domain",
     "licenseUrl": "",
     "artist": "Pontormo",
-    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"p/pontormo/4capponi/1depos\""
+    "credit": "The Yorck Project"
   },
   "greco": {
     "file": "greco.jpg",
@@ -514,12 +514,12 @@
   },
   "rubens": {
     "file": "rubens.jpg",
-    "commonsTitle": "File:Peter Paul Rubens - Raising of the Cross - WGA20437.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Raising_of_the_Cross_-_WGA20437.jpg",
+    "commonsTitle": "File:Peter Paul Rubens - Raising of the Cross - 1610.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Raising_of_the_Cross_-_1610.jpg",
     "license": "Public domain",
     "licenseUrl": "",
     "artist": "Peter Paul Rubens",
-    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"r/rubens/7graphic/10sketc1\""
+    "credit": "Public-domain reproduction of the 1610 triptych"
   },
   "night-watch": {
     "file": "night-watch.jpg",
@@ -658,12 +658,12 @@
   },
   "liberty": {
     "file": "liberty.jpg",
-    "commonsTitle": "File:Eugène Delacroix - Liberty Leading the People (28th July 1830) - WGA6177.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Liberty_Leading_the_People_(28th_July_1830)_-_WGA6177.jpg",
+    "commonsTitle": "File:La Liberté guidant le peuple - Eugène Delacroix - Musée du Louvre Peintures RF 129 - après restauration 2024.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:La_Liberté_guidant_le_peuple_-_Eugène_Delacroix_-_Musée_du_Louvre_Peintures_RF_129_-_après_restauration_2024.jpg",
     "license": "Public domain",
     "licenseUrl": "",
     "artist": "Eugène Delacroix",
-    "credit": "Web Gallery of Art : Image Info about artwork wga QS:P11807,\"_m/d/delacroi/2/208delac\""
+    "credit": "Louvre, photo Shonagon, after the 2024 restoration"
   },
   "olympia": {
     "file": "olympia.jpg",
@@ -739,12 +739,12 @@
   },
   "ghent": {
     "file": "ghent.jpg",
-    "commonsTitle": "File:Ghent Altarpiece by Jan van Eyck ALL.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_by_Jan_van_Eyck_ALL.jpg",
+    "commonsTitle": "File:Ghent Altarpiece Google Art Project.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_Google_Art_Project.jpg",
     "license": "Public domain",
     "licenseUrl": "",
-    "artist": "未注明",
-    "credit": "focuslife.jouwweb.nl/reizen/gent-2016"
+    "artist": "Jan van Eyck",
+    "credit": "Google Arts & Culture"
   },
   "last-supper": {
     "file": "last-supper.jpg",
@@ -829,11 +829,50 @@
   },
   "gauguin": {
     "file": "gauguin.jpg",
-    "commonsTitle": "File:Paul Gauguin - Vision of the Sermon (Jacob Wrestling with the Angel) - NG 1643 - National Galleries of Scotland.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Paul_Gauguin_-_Vision_of_the_Sermon_(Jacob_Wrestling_with_the_Angel)_-_NG_1643_-_National_Galleries_of_Scotland.jpg",
+    "commonsTitle": "File:La vision après le sermon (Paul Gauguin).jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:La_vision_après_le_sermon_(Paul_Gauguin).jpg",
     "license": "Public domain",
     "licenseUrl": "",
     "artist": "Paul Gauguin",
-    "credit": "National Galleries Scotland"
+    "credit": "National Galleries of Scotland"
+  },
+  "demoiselles": {
+    "file": "demoiselles.jpg",
+    "commonsTitle": "File:Les Demoiselles d'Avignon.jpg",
+    "commonsPage": "https://en.wikipedia.org/wiki/File:Les_Demoiselles_d'Avignon.jpg",
+    "license": "PD-US",
+    "licenseUrl": "",
+    "artist": "Pablo Picasso",
+    "credit": "Museum of Modern Art, New York",
+    "useNote": "非商业学习用途"
+  },
+  "dance": {
+    "file": "dance.jpg",
+    "commonsTitle": "File:Matissedance.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Matissedance.jpg",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "artist": "Henri Matisse",
+    "credit": "State Hermitage Museum"
+  },
+  "pollock": {
+    "file": "pollock.jpg",
+    "commonsTitle": "File:Autumn Rhythm.jpg",
+    "commonsPage": "https://en.wikipedia.org/wiki/File:Autumn_Rhythm.jpg",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "artist": "Jackson Pollock",
+    "credit": "The Metropolitan Museum of Art, 57.92",
+    "useNote": "非商业学习用途"
+  },
+  "marilyn": {
+    "file": "marilyn.jpg",
+    "commonsTitle": "File:Marilyndiptych.jpg",
+    "commonsPage": "https://en.wikipedia.org/wiki/File:Marilyndiptych.jpg",
+    "license": "Fair use",
+    "licenseUrl": "",
+    "artist": "Andy Warhol",
+    "credit": "Tate",
+    "useNote": "非商业学习用途"
   }
 }

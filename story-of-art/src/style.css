@@ -205,9 +205,37 @@ h1 {
 
 .more-looking span { font-weight: 600; }
 
+button.term {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-bottom: 1px dashed rgba(27, 25, 22, 0.22);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  line-height: inherit;
+  vertical-align: baseline;
+}
+
+button.term:hover {
+  border-bottom-color: rgba(27, 25, 22, 0.4);
+}
+
+button.term:focus-visible {
+  outline: 1px solid rgba(27, 25, 22, 0.28);
+  outline-offset: 2px;
+}
+
 .gloss {
   color: var(--quiet);
-  font-size: 0.92em;
+  font-size: 0.84em;
+  font-weight: 400;
+}
+
+.work-use {
+  color: var(--quiet);
+  font-size: 0.92rem;
 }
 
 strong.key {
