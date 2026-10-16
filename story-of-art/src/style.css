@@ -4,7 +4,7 @@
   --quiet: #5e584f;
   --rule: #d9d2c5;
   --ribbon: #8d2a24;
-  --text: "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", "STSong", "SimSun", "PMingLiU", serif;
+  --text: "Songti SC", "宋体", "Source Han Serif SC", "Noto Serif CJK SC", "STSong", "SimSun", "PMingLiU", serif;
 }
 
 * { box-sizing: border-box; }
