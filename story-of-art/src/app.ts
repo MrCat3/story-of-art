@@ -162,9 +162,13 @@ function workCard(id: string, seen?: Set<string>) {
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
     : "";
-  const useNote = credit?.useNote
-    ? `<span class="work-use">${escapeHtml(credit.useNote)}</span>`
-    : "";
+  const creditBits = [credit?.useNote, credit?.license]
+    .filter((part): part is string => Boolean(part))
+    .map((part) => escapeHtml(part));
+  const creditLine =
+    creditBits.length || source
+      ? `<p class="work-credit">${creditBits.join(" · ")}${creditBits.length && source ? " · " : ""}${source}</p>`
+      : "";
   const prose = [work.context, work.style, work.inBook, work.look].filter(
     (part): part is string => Boolean(part),
   );
@@ -175,8 +179,7 @@ function workCard(id: string, seen?: Set<string>) {
       <span class="work-title">${work.title}</span>
       <span class="work-meta">${work.artist} · ${work.year} · ${work.place}</span>
       ${prose.map((part) => `<p>${withMarks(part, [], seen)}</p>`).join("")}
-      ${useNote}
-      ${source}
+      ${creditLine}
     </figcaption>
   </figure>`;
 }

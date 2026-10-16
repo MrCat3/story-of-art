@@ -94,6 +94,6 @@
   {"id": "gauguin", "query": "La vision après le sermon Gauguin", "must": ["après"], "not": ["stamp", "detail", "sketch"]},
   {"id": "demoiselles", "query": "Les Demoiselles d'Avignon Picasso", "must": ["demoiselles"], "not": ["detail", "study"]},
   {"id": "dance", "query": "Matisse Dance Hermitage", "must": ["matisse"], "not": ["study", "hermitage"]},
-  {"id": "pollock", "query": "Pollock Autumn Rhythm", "must": ["autumn"], "not": ["lavender"]},
-  {"id": "marilyn", "query": "Warhol Marilyn Diptych", "must": ["marilyn"], "not": ["ter-oganian"]}
+  {"id": "pollock", "query": "Pollock Autumn Rhythm Number 30", "must": ["autumn", "rhythm"], "not": ["lavender", "number 1"]},
+  {"id": "marilyn", "query": "Warhol Marilyn Diptych 1962", "must": ["diptych"], "not": ["ter-oganian", "illusion"]}
 ]

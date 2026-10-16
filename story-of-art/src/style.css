@@ -233,9 +233,20 @@ button.term:focus-visible {
   font-weight: 400;
 }
 
-.work-use {
-  color: var(--quiet);
-  font-size: 0.92rem;
+.essay .inline-work figcaption p.work-credit {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(27, 25, 22, 0.38);
+}
+
+.essay .inline-work figcaption p.work-credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.essay .inline-work figcaption p.work-credit a:hover {
+  color: rgba(27, 25, 22, 0.55);
 }
 
 strong.key {
