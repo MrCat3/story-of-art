@@ -39,7 +39,7 @@ function chapterListLabel(id: string, ch: ReturnType<typeof getChapter>) {
 }
 
 function topbar(route: Route) {
-  const home = route.name === "home";
+  const home = route.name === "home" || route.name === "part" || route.name === "read";
   const derive = route.name === "derive";
   return `<header class="topbar">
     <a class="brand" href="#home">${site.title}</a>
@@ -150,6 +150,14 @@ function withMarks(text: string, marks: string[] = [], seen?: Set<string>) {
   return seen ? annotate(html, seen) : html;
 }
 
+function usefulCreditText(value: string | undefined): string | null {
+  if (!value) return null;
+  const text = value.replace(/\s+/g, " ").trim();
+  if (!text || text === "未注明") return null;
+  if (/^unknown(\s+(author|artist))+$/i.test(text)) return null;
+  return text;
+}
+
 function workCard(id: string, seen?: Set<string>) {
   const work = getWork(id);
   const src = imageSrc(id);
@@ -166,7 +174,12 @@ function workCard(id: string, seen?: Set<string>) {
   const source = credit?.commonsPage
     ? `<a href="${credit.commonsPage}" target="_blank" rel="noopener">图源</a>`
     : "";
-  const creditBits = [credit?.useNote, credit?.license]
+  const creditBits = [
+    usefulCreditText(credit?.artist),
+    usefulCreditText(credit?.credit),
+    usefulCreditText(credit?.useNote),
+    usefulCreditText(credit?.license),
+  ]
     .filter((part): part is string => Boolean(part))
     .map((part) => escapeHtml(part));
   const creditLine =
@@ -246,6 +259,18 @@ function renderPart(partId: number) {
       <p class="deck">${part.blurb}</p>
     </header>
     <ol class="toc">${rows}</ol>
+  </article>`;
+}
+
+function renderMissing(id: string) {
+  const label = id ? escapeHtml(id) : "（空）";
+  return `<article class="sheet">
+    <p class="crumb"><a href="#home">全书</a></p>
+    <header class="sheet-head">
+      <p class="book-kicker">READ</p>
+      <h1>没有这一章</h1>
+    </header>
+    <p class="deck">地址里的「${label}」对不上这本书的章节。从全书重新选。</p>
   </article>`;
 }
 
@@ -357,11 +382,12 @@ export function render() {
   let body = "";
   if (route.name === "read") {
     try {
+      getChapter(route.id);
       body = renderChapter(route.id);
       document.title = `${getChapter(route.id).title} · 艺术的故事`;
     } catch {
-      body = renderHome();
-      document.title = site.title;
+      body = renderMissing(route.id);
+      document.title = `没有这一章 · ${site.title}`;
     }
   } else if (route.name === "part") {
     body = renderPart(route.id);

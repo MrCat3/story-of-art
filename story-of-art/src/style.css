@@ -234,19 +234,21 @@ button.term:focus-visible {
 }
 
 .essay .inline-work figcaption p.work-credit {
-  margin: 0.2rem 0 0;
-  font-size: 0.72rem;
-  line-height: 1.45;
-  color: rgba(27, 25, 22, 0.38);
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--quiet);
+  overflow-wrap: anywhere;
 }
 
 .essay .inline-work figcaption p.work-credit a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .essay .inline-work figcaption p.work-credit a:hover {
-  color: rgba(27, 25, 22, 0.55);
+  color: var(--ribbon);
 }
 
 strong.key {
