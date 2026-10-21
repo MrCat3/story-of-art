@@ -13,7 +13,7 @@ export const extras: Record<string, Partial<Work>> = {
   kritios: { query: "Kritios Boy" },
   discobolus: {
     query: "Discobolus of Myron",
-    context: "米隆约公元前 450 年的青铜原作已失，现在各馆的大理石都是罗马复制。最常被提起的是大英博物馆的汤利掷铁饼者。运动员弯腰，铁饼引到身后。",
+    context: "米隆约公元前 450 年的青铜原作已失，现在各馆的大理石都是罗马复制。这里的图是罗马国立博物馆马西莫宫的兰切洛蒂本：运动员弯腰，铁饼引到身后，头转向铁饼。大英博物馆的汤利本更常被提起，但它的头曾被错误地修复成正面朝前。",
     style: "身体连成一个马上要弹开的弧。脸仍平静，肌肉处在动作的中途，而不是摆一个对称的站姿。这是克里提奥斯少年之后，瞬间被做成题目。",
     inBook: "贡布里希用它说明希腊人学会让身体处于某一刻，而且这一刻看起来必然。它不是更圆的埃及立像。",
   },
@@ -166,7 +166,7 @@ export const extras: Record<string, Partial<Work>> = {
     query: "Tres Riches Heures January",
     context: "林堡兄弟约 1412 至 1416 年为贝里公爵画的豪华时祷书，现藏尚蒂伊孔德博物馆。月历每页是一个月的劳作或宴饮。",
     style: "一月是宴席和壁炉，其他页有播种、收割和雪。城堡画得很具体，农民的动作也能认出。祈祷书变成一本观察世界的书。",
-    inBook: "宫廷的私人委托把日常生活带进虔诚。这是十四世纪朝臣趣味的代表。",
+    inBook: "宫廷的私人委托把日常生活带进虔诚。书写于约 1412 至 1416 年，已是十五世纪初。贡布里希仍把它放在朝臣这一章，不是把它当成十四世纪的代表。",
   },
   masaccio: {
     query: "Masaccio Holy Trinity",
@@ -227,7 +227,7 @@ export const extras: Record<string, Partial<Work>> = {
   "school-athens": { query: "Raphael School of Athens" },
   tempest: {
     query: "Giorgione The Tempest",
-    context: "乔尔乔内约 1506 至 1508 年的板上油画，现藏威尼斯学院。闪电下，一个喂奶的女人和一个持杖的男人，故事没有被画完。",
+    context: "乔尔乔内约 1506 至 1508 年的布面油画，约 82 × 73 厘米，现藏威尼斯学院。闪电下，一个喂奶的女人和一个持杖的男人，故事没有被画完。",
     style: "风景和天气占的面积比人物大。颜色潮湿，轮廓软。你无法确定两人是谁，气氛却完整。",
     inBook: "威尼斯让说不完全的天气成为内容。贡布里希用它离开佛罗伦萨的清楚线稿。",
   },

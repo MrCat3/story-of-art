@@ -684,13 +684,13 @@
   "tiepolo": {
     "file": "tiepolo.webp",
     "width": 1200,
-    "height": 915,
-    "commonsTitle": "File:Santa Maria del Rosario (Venice) Nave ceiling by Tiepolo - The Glory of St Dominic.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_del_Rosario_(Venice)_Nave_ceiling_by_Tiepolo_-_The_Glory_of_St_Dominic.jpg",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "artist": "Didier Descouens",
-    "credit": "Own work"
+    "height": 900,
+    "commonsTitle": "File:Treppenhaus Residenz Würzburg Deckenfresco 01.JPG",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Treppenhaus_Residenz_W%C3%BCrzburg_Deckenfresco_01.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "sailko",
+    "credit": "Own work; Tiepolo, Apollo and the Continents, Würzburg Residenz staircase"
   },
   "canaletto": {
     "file": "canaletto.webp",
@@ -706,13 +706,13 @@
   "rigaud": {
     "file": "rigaud.webp",
     "width": 1200,
-    "height": 1563,
-    "commonsTitle": "File:Hyacinthe Rigaud - Louis de France, Dauphin (1661-1711), dit le Grand Dauphin - Google Art Project.jpg",
-    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hyacinthe_Rigaud_-_Louis_de_France,_Dauphin_(1661-1711),_dit_le_Grand_Dauphin_-_Google_Art_Project.jpg",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "artist": "After Joseph Parrocel / Workshop of Hyacinthe Rigaud",
-    "credit": "Google Arts & Culture — awFNo9mgo4zfmg"
+    "height": 1731,
+    "commonsTitle": "File:Hyacinthe Rigaud, Portrait de Louis XIV en grand manteau royal, 1701-1702, Paris, musée du Louvre.jpg",
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Hyacinthe_Rigaud,_Portrait_de_Louis_XIV_en_grand_manteau_royal,_1701-1702,_Paris,_mus%C3%A9e_du_Louvre.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "artist": "Matthieu.lett.ube",
+    "credit": "Own work; Hyacinthe Rigaud, Louis XIV, Louvre INV 7492"
   },
   "poussin": {
     "file": "poussin.webp",
