@@ -188,8 +188,8 @@ const catalog: Work[] = [
     id: "pantocrator",
     title: "全能基督",
     artist: "作者不详",
-    year: "中世纪镶嵌",
-    place: "常见于教堂穹顶或半圆室",
+    year: "约 1261 年后",
+    place: "圣索菲亚南廊德西斯镶嵌",
   },
   {
     id: "cordoba",
@@ -498,7 +498,7 @@ const catalog: Work[] = [
     id: "san-carlo",
     title: "四泉圣卡罗教堂",
     artist: "博罗米尼",
-    year: "1638–1646 年",
+    year: "教堂本体 1638–1646 年；波浪形立面 1665–1667 年",
     place: "罗马",
   },
   {
@@ -601,10 +601,10 @@ const catalog: Work[] = [
   },
   {
     id: "cezanne",
-    title: "圣维克多山",
+    title: "从比贝慕斯采石场看圣维克多山",
     artist: "保罗·塞尚",
-    year: "约 1902–1904 年",
-    place: "多个版本分藏各馆，此图以公开文件为准",
+    year: "约 1897 年",
+    place: "巴尔的摩美术馆",
   },
   {
     id: "starry",
